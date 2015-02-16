@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 1.7.7" name="Project">
+  <Target name="Project" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="344" chipName="STM32F407VG" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value="-std=c99"/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Option name="FPU" value="2"/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="STM32F40_41xxx"/>
+          <Define name="USE_STDPERIPH_DRIVER"/>
+          <Define name="__FPU_USED"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="1"/>
+        <Option name="nostartfiles" value="0"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value="--entry=main; "/>
+        <LinkedLibraries>
+          <Libset dir="C:\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\" libs="m"/>
+        </LinkedLibraries>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00100000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00020000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="../../../../../../coocox/coide/configuration/programdata/project/arm-gcc-link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="Project"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="./stm32f4xx_1024.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./">
+    <Component id="30" name="C Library" path="" type="2"/>
+  </Components>
+  <Files>
+    <File name="drivers/hal/source/stm32f4xx_tim.c" path="drivers/hal/source/stm32f4xx_tim.c" type="1"/>
+    <File name="os/ucos/cfg/os_cfg_app.h" path="os/ucos/cfg/os_cfg_app.h" type="1"/>
+    <File name="os/ucos/cfg/cpu_cfg.h" path="os/ucos/cfg/cpu_cfg.h" type="1"/>
+    <File name="drivers/cmsis/include/core_cm3.h" path="drivers/cmsis/include/core_cm3.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_flash.h" path="drivers/hal/include/stm32f4xx_flash.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_fsmc.h" path="drivers/hal/include/stm32f4xx_fsmc.h" type="1"/>
+    <File name="os/ucos/os/.DS_Store" path="os/ucos/os/.DS_Store" type="1"/>
+    <File name="os/ucos/os/source/os_pend_multi.c" path="os/ucos/os/source/os_pend_multi.c" type="1"/>
+    <File name="os/ucos/cpu/.DS_Store" path="os/ucos/cpu/.DS_Store" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_cryp_des.c" path="drivers/hal/source/stm32f4xx_cryp_des.c" type="1"/>
+    <File name="os/ucos/os/ports" path="" type="2"/>
+    <File name="os/ucos/lib/lib_str.c" path="os/ucos/lib/lib_str.c" type="1"/>
+    <File name="os/ucos/os/source/os_task.c" path="os/ucos/os/source/os_task.c" type="1"/>
+    <File name="drivers/bsp" path="" type="2"/>
+    <File name="drivers/hal/include/stm32f4xx_spi.h" path="drivers/hal/include/stm32f4xx_spi.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_dma2d.c" path="drivers/hal/source/stm32f4xx_dma2d.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_gpio.h" path="drivers/hal/include/stm32f4xx_gpio.h" type="1"/>
+    <File name="drivers/cmsis/include/core_cmFunc.h" path="drivers/cmsis/include/core_cmFunc.h" type="1"/>
+    <File name="drivers/cmsis/include/arm_const_structs.h" path="drivers/cmsis/include/arm_const_structs.h" type="1"/>
+    <File name="os/ucos/cfg" path="" type="2"/>
+    <File name="drivers/cmsis/include" path="" type="2"/>
+    <File name="os/ucos/cpu/ARM-Cortex-M4/.DS_Store" path="os/ucos/cpu/ARM-Cortex-M4/.DS_Store" type="1"/>
+    <File name="drivers/hal" path="" type="2"/>
+    <File name="os/ucos/os/source/os_cfg_app.c" path="os/ucos/os/source/os_cfg_app.c" type="1"/>
+    <File name="os/ucos/os/source/os_q.c" path="os/ucos/os/source/os_q.c" type="1"/>
+    <File name="os/ucos/lib/lib_def.h" path="os/ucos/lib/lib_def.h" type="1"/>
+    <File name="os/ucos/serial/Line/serial_line_probe.h" path="os/ucos/serial/Line/serial_line_probe.h" type="1"/>
+    <File name="drivers" path="" type="2"/>
+    <File name="os/ucos/cfg/lib_cfg.h" path="os/ucos/cfg/lib_cfg.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_i2c.h" path="drivers/hal/include/stm32f4xx_i2c.h" type="1"/>
+    <File name="drivers/cmsis/include/core_cm0plus.h" path="drivers/cmsis/include/core_cm0plus.h" type="1"/>
+    <File name="drivers/bsp/os/ucos/bsp_os.h" path="drivers/bsp/os/ucos/bsp_os.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_fsmc.c" path="drivers/hal/source/stm32f4xx_fsmc.c" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_usart.c" path="drivers/hal/source/stm32f4xx_usart.c" type="1"/>
+    <File name="os/ucos/os/source" path="" type="2"/>
+    <File name="drivers/hal/source" path="" type="2"/>
+    <File name="drivers/hal/include/stm32f4xx_rtc.h" path="drivers/hal/include/stm32f4xx_rtc.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_hash_sha1.c" path="drivers/hal/source/stm32f4xx_hash_sha1.c" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_hash.c" path="drivers/hal/source/stm32f4xx_hash.c" type="1"/>
+    <File name="drivers/bsp/bsp.c" path="drivers/bsp/bsp.c" type="1"/>
+    <File name="pinmap.h" path="pinmap.h" type="1"/>
+    <File name="drivers/bsp/os/ucos/bsp_os.c" path="drivers/bsp/os/ucos/bsp_os.c" type="1"/>
+    <File name="os/ucos/os/source/os_core.c" path="os/ucos/os/source/os_core.c" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_hash_md5.c" path="drivers/hal/source/stm32f4xx_hash_md5.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_syscfg.h" path="drivers/hal/include/stm32f4xx_syscfg.h" type="1"/>
+    <File name="main.c" path="main.c" type="1"/>
+    <File name="os/ucos/serial/Line/serial_line_probe.c" path="os/ucos/serial/Line/serial_line_probe.c" type="1"/>
+    <File name="os/ucos/lib/ports/.DS_Store" path="os/ucos/lib/ports/.DS_Store" type="1"/>
+    <File name="drivers/cmsis/device" path="" type="2"/>
+    <File name="drivers/hal/source/stm32f4xx_pwr.c" path="drivers/hal/source/stm32f4xx_pwr.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_sai.h" path="drivers/hal/include/stm32f4xx_sai.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_hash.h" path="drivers/hal/include/stm32f4xx_hash.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_adc.h" path="drivers/hal/include/stm32f4xx_adc.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_crc.c" path="drivers/hal/source/stm32f4xx_crc.c" type="1"/>
+    <File name="os/ucos/serial/Driver" path="" type="2"/>
+    <File name="os/ucos/os/ports/ARM-Cortex-M4/Generic/os_cpu_c.c" path="os/ucos/os/ports/ARM-Cortex-M4/Generic/os_cpu_c.c" type="1"/>
+    <File name="os/ucos/lib/lib_ascii.h" path="os/ucos/lib/lib_ascii.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_dma.c" path="drivers/hal/source/stm32f4xx_dma.c" type="1"/>
+    <File name="drivers/bsp/bsp.h" path="drivers/bsp/bsp.h" type="1"/>
+    <File name="os/ucos/os/source/os_sem.c" path="os/ucos/os/source/os_sem.c" type="1"/>
+    <File name="os/ucos/cpu/ARM-Cortex-M4/cpu_c.c" path="os/ucos/cpu/ARM-Cortex-M4/cpu_c.c" type="1"/>
+    <File name="os/ucos/cpu" path="" type="2"/>
+    <File name="os/ucos/os/source/os_tmr.c" path="os/ucos/os/source/os_tmr.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_cryp.h" path="drivers/hal/include/stm32f4xx_cryp.h" type="1"/>
+    <File name="os/ucos/serial" path="" type="2"/>
+    <File name="drivers/cmsis/include/core_sc000.h" path="drivers/cmsis/include/core_sc000.h" type="1"/>
+    <File name="os/ucos/os" path="" type="2"/>
+    <File name="os/ucos/lib/.DS_Store" path="os/ucos/lib/.DS_Store" type="1"/>
+    <File name="os/ucos/os/source/os_time.c" path="os/ucos/os/source/os_time.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_exti.h" path="drivers/hal/include/stm32f4xx_exti.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_flash.c" path="drivers/hal/source/stm32f4xx_flash.c" type="1"/>
+    <File name="os/ucos/cpu/ARM-Cortex-M4" path="" type="2"/>
+    <File name="os/ucos/serial/Line/serial_line_dflt.c" path="os/ucos/serial/Line/serial_line_dflt.c" type="1"/>
+    <File name="os/ucos/os/ports/ARM-Cortex-M4/Generic/os_cpu_a.s" path="os/ucos/os/ports/ARM-Cortex-M4/Generic/os_cpu_a.s" type="1"/>
+    <File name="drivers/cmsis" path="" type="2"/>
+    <File name="os/ucos/lib/ports/ARM-Cortex-M4/lib_mem_a.s" path="os/ucos/lib/ports/ARM-Cortex-M4/lib_mem_a.s" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_dcmi.c" path="drivers/hal/source/stm32f4xx_dcmi.c" type="1"/>
+    <File name="drivers/cmsis/include/core_sc300.h" path="drivers/cmsis/include/core_sc300.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_exti.c" path="drivers/hal/source/stm32f4xx_exti.c" type="1"/>
+    <File name="os/ucos/serial/Line/serial_line_tty.c" path="os/ucos/serial/Line/serial_line_tty.c" type="1"/>
+    <File name="os/ucos/cpu/ARM-Cortex-M4/cpu_a.s" path="os/ucos/cpu/ARM-Cortex-M4/cpu_a.s" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_rng.c" path="drivers/hal/source/stm32f4xx_rng.c" type="1"/>
+    <File name="os/ucos/serial/Line/serial_line_tty.h" path="os/ucos/serial/Line/serial_line_tty.h" type="1"/>
+    <File name="os/ucos/os/source/os_prio.c" path="os/ucos/os/source/os_prio.c" type="1"/>
+    <File name="os/ucos/os/source/os.h" path="os/ucos/os/source/os.h" type="1"/>
+    <File name="os/ucos/serial/OS/serial_os.h" path="os/ucos/serial/OS/serial_os.h" type="1"/>
+    <File name="drivers/cmsis/device/source" path="" type="2"/>
+    <File name="drivers/cmsis/device/include/system_stm32f4xx.h" path="drivers/cmsis/device/include/system_stm32f4xx.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_usart.h" path="drivers/hal/include/stm32f4xx_usart.h" type="1"/>
+    <File name="os/ucos/serial/Line/serial_line_dflt.h" path="os/ucos/serial/Line/serial_line_dflt.h" type="1"/>
+    <File name="os/ucos/lib/ports/ARM-Cortex-M4" path="" type="2"/>
+    <File name="drivers/hal/source/stm32f4xx_rcc.c" path="drivers/hal/source/stm32f4xx_rcc.c" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_dac.c" path="drivers/hal/source/stm32f4xx_dac.c" type="1"/>
+    <File name="drivers/cmsis/device/include/stm32f407xx.h" path="drivers/cmsis/device/include/stm32f407xx.h" type="1"/>
+    <File name="drivers/cmsis/device/source/templates" path="" type="2"/>
+    <File name="os/ucos/os/source/os_int.c" path="os/ucos/os/source/os_int.c" type="1"/>
+    <File name="os/ucos/lib/lib_ascii.c" path="os/ucos/lib/lib_ascii.c" type="1"/>
+    <File name="os/ucos/serial/Line" path="" type="2"/>
+    <File name="os/ucos/serial/Source/serial_buf.h" path="os/ucos/serial/Source/serial_buf.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_ltdc.c" path="drivers/hal/source/stm32f4xx_ltdc.c" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_dbgmcu.c" path="drivers/hal/source/stm32f4xx_dbgmcu.c" type="1"/>
+    <File name="os/ucos/lib/lib_mem.c" path="os/ucos/lib/lib_mem.c" type="1"/>
+    <File name="os/ucos/os/source/os_flag.c" path="os/ucos/os/source/os_flag.c" type="1"/>
+    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
+    <File name="os/ucos/os/ports/ARM-Cortex-M4/Generic/.DS_Store" path="os/ucos/os/ports/ARM-Cortex-M4/Generic/.DS_Store" type="1"/>
+    <File name="os/ucos/serial/Driver/ST" path="" type="2"/>
+    <File name="os/ucos" path="" type="2"/>
+    <File name="os/ucos/serial/Driver/ST/STM3240x/serial_bsp_stm3240x.h" path="os/ucos/serial/Driver/ST/STM3240x/serial_bsp_stm3240x.h" type="1"/>
+    <File name="os/ucos/cpu/ARM-Cortex-M4/cpu.h" path="os/ucos/cpu/ARM-Cortex-M4/cpu.h" type="1"/>
+    <File name="os/ucos/serial/Source/serial.c" path="os/ucos/serial/Source/serial.c" type="1"/>
+    <File name="os/ucos/serial/OS" path="" type="2"/>
+    <File name="os/ucos/lib/lib_mem.h" path="os/ucos/lib/lib_mem.h" type="1"/>
+    <File name="os/ucos/serial/Driver/ST/serial_drv_stm32.c" path="os/ucos/serial/Driver/ST/serial_drv_stm32.c" type="1"/>
+    <File name="drivers/bsp/.DS_Store" path="drivers/bsp/.DS_Store" type="1"/>
+    <File name="os/ucos/serial/Driver/ST/STM3240x" path="" type="2"/>
+    <File name="os/ucos/serial/Driver/ST/STM3240x/serial_bsp_stm3240x.c" path="os/ucos/serial/Driver/ST/STM3240x/serial_bsp_stm3240x.c" type="1"/>
+    <File name="cfg" path="" type="2"/>
+    <File name="drivers/hal/source/stm32f4xx_spi.c" path="drivers/hal/source/stm32f4xx_spi.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_pwr.h" path="drivers/hal/include/stm32f4xx_pwr.h" type="1"/>
+    <File name="os/ucos/serial/Source/serial_type.h" path="os/ucos/serial/Source/serial_type.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_crc.h" path="drivers/hal/include/stm32f4xx_crc.h" type="1"/>
+    <File name="os/ucos/lib" path="" type="2"/>
+    <File name="os_app_hooks.h" path="os_app_hooks.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_sdio.h" path="drivers/hal/include/stm32f4xx_sdio.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_iwdg.c" path="drivers/hal/source/stm32f4xx_iwdg.c" type="1"/>
+    <File name="os/ucos/os/source/os_mem.c" path="os/ucos/os/source/os_mem.c" type="1"/>
+    <File name="os/ucos/os/ports/ARM-Cortex-M4/.DS_Store" path="os/ucos/os/ports/ARM-Cortex-M4/.DS_Store" type="1"/>
+    <File name="drivers/cmsis/include/arm_math.h" path="drivers/cmsis/include/arm_math.h" type="1"/>
+    <File name="os/ucos/os/source/os_msg.c" path="os/ucos/os/source/os_msg.c" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_sai.c" path="drivers/hal/source/stm32f4xx_sai.c" type="1"/>
+    <File name="os/ucos/os/source/os_type.h" path="os/ucos/os/source/os_type.h" type="1"/>
+    <File name="os/ucos/serial/Source/serial.h" path="os/ucos/serial/Source/serial.h" type="1"/>
+    <File name="os_app_hooks.c" path="os_app_hooks.c" type="1"/>
+    <File name="os/ucos/cpu/cpu_def.h" path="os/ucos/cpu/cpu_def.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_iwdg.h" path="drivers/hal/include/stm32f4xx_iwdg.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_cryp.c" path="drivers/hal/source/stm32f4xx_cryp.c" type="1"/>
+    <File name="os/ucos/os/ports/ARM-Cortex-M4/Generic/os_cpu.h" path="os/ucos/os/ports/ARM-Cortex-M4/Generic/os_cpu.h" type="1"/>
+    <File name="os/ucos/os/ports/ARM-Cortex-M4" path="" type="2"/>
+    <File name="drivers/cmsis/include/core_cm0.h" path="drivers/cmsis/include/core_cm0.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_rng.h" path="drivers/hal/include/stm32f4xx_rng.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_i2c.c" path="drivers/hal/source/stm32f4xx_i2c.c" type="1"/>
+    <File name="os/ucos/os/source/os_dbg.c" path="os/ucos/os/source/os_dbg.c" type="1"/>
+    <File name="os/ucos/os/source/os_var.c" path="os/ucos/os/source/os_var.c" type="1"/>
+    <File name="os/ucos/serial/OS/uCOS-III/serial_os.c" path="os/ucos/serial/OS/uCOS-III/serial_os.c" type="1"/>
+    <File name="drivers/cmsis/include/core_cmInstr.h" path="drivers/cmsis/include/core_cmInstr.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_adc.c" path="drivers/hal/source/stm32f4xx_adc.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_dma.h" path="drivers/hal/include/stm32f4xx_dma.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_wwdg.c" path="drivers/hal/source/stm32f4xx_wwdg.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_dcmi.h" path="drivers/hal/include/stm32f4xx_dcmi.h" type="1"/>
+    <File name="os/ucos/cfg/app_cfg.h" path="os/ucos/cfg/app_cfg.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_wwdg.h" path="drivers/hal/include/stm32f4xx_wwdg.h" type="1"/>
+    <File name="os/ucos/lib/lib_math.h" path="os/ucos/lib/lib_math.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_dbgmcu.h" path="drivers/hal/include/stm32f4xx_dbgmcu.h" type="1"/>
+    <File name="drivers/cmsis/include/arm_common_tables.h" path="drivers/cmsis/include/arm_common_tables.h" type="1"/>
+    <File name="drivers/bsp/os/ucos" path="" type="2"/>
+    <File name="drivers/hal/source/stm32f4xx_cryp_tdes.c" path="drivers/hal/source/stm32f4xx_cryp_tdes.c" type="1"/>
+    <File name="os/ucos/os/ports/.DS_Store" path="os/ucos/os/ports/.DS_Store" type="1"/>
+    <File name="drivers/bsp/os" path="" type="2"/>
+    <File name="drivers/hal/source/stm32f4xx_syscfg.c" path="drivers/hal/source/stm32f4xx_syscfg.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_ltdc.h" path="drivers/hal/include/stm32f4xx_ltdc.h" type="1"/>
+    <File name="drivers/cmsis/device/source/templates/system_stm32f4xx.c" path="drivers/cmsis/device/source/templates/system_stm32f4xx.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_dac.h" path="drivers/hal/include/stm32f4xx_dac.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_rtc.c" path="drivers/hal/source/stm32f4xx_rtc.c" type="1"/>
+    <File name="drivers/bsp/bsp_periph.c" path="drivers/bsp/bsp_periph.c" type="1"/>
+    <File name="drivers/hal/include" path="" type="2"/>
+    <File name="os/ucos/serial/Source/serial_buf.c" path="os/ucos/serial/Source/serial_buf.c" type="1"/>
+    <File name="os/ucos/lib/lib_math.c" path="os/ucos/lib/lib_math.c" type="1"/>
+    <File name="drivers/cmsis/device/include/stm32f4xx.h" path="drivers/cmsis/device/include/stm32f4xx.h" type="1"/>
+    <File name="drivers/cmsis/include/core_cm4_simd.h" path="drivers/cmsis/include/core_cm4_simd.h" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_can.h" path="drivers/hal/include/stm32f4xx_can.h" type="1"/>
+    <File name="os/ucos/serial/OS/uCOS-III" path="" type="2"/>
+    <File name="drivers/bsp/cstartup.s" path="drivers/bsp/cstartup.s" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_cryp_aes.c" path="drivers/hal/source/stm32f4xx_cryp_aes.c" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_sdio.c" path="drivers/hal/source/stm32f4xx_sdio.c" type="1"/>
+    <File name="includes.h" path="includes.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_can.c" path="drivers/hal/source/stm32f4xx_can.c" type="1"/>
+    <File name="drivers/hal/include/stm32f4xx_rcc.h" path="drivers/hal/include/stm32f4xx_rcc.h" type="1"/>
+    <File name="drivers/hal/source/misc.c" path="drivers/hal/source/misc.c" type="1"/>
+    <File name="os/ucos/cpu/cpu_core.c" path="os/ucos/cpu/cpu_core.c" type="1"/>
+    <File name="os/ucos/cfg/os_cfg.h" path="os/ucos/cfg/os_cfg.h" type="1"/>
+    <File name="os/ucos/serial/Driver/ST/serial_drv_stm32.h" path="os/ucos/serial/Driver/ST/serial_drv_stm32.h" type="1"/>
+    <File name="drivers/cmsis/include/core_cm4.h" path="drivers/cmsis/include/core_cm4.h" type="1"/>
+    <File name="drivers/cmsis/device/include" path="" type="2"/>
+    <File name="drivers/hal/include/stm32f4xx_tim.h" path="drivers/hal/include/stm32f4xx_tim.h" type="1"/>
+    <File name="os/ucos/lib/lib_str.h" path="os/ucos/lib/lib_str.h" type="1"/>
+    <File name="drivers/hal/source/stm32f4xx_gpio.c" path="drivers/hal/source/stm32f4xx_gpio.c" type="1"/>
+    <File name="os/ucos/lib/ports" path="" type="2"/>
+    <File name="os/ucos/os/source/os_stat.c" path="os/ucos/os/source/os_stat.c" type="1"/>
+    <File name="os" path="" type="2"/>
+    <File name="os/ucos/serial/Source" path="" type="2"/>
+    <File name="syscalls" path="" type="2"/>
+    <File name="drivers/hal/include/stm32f4xx_dma2d.h" path="drivers/hal/include/stm32f4xx_dma2d.h" type="1"/>
+    <File name="drivers/hal/include/misc.h" path="drivers/hal/include/misc.h" type="1"/>
+    <File name="os/ucos/cpu/cpu_core.h" path="os/ucos/cpu/cpu_core.h" type="1"/>
+    <File name="os/ucos/os/ports/ARM-Cortex-M4/Generic" path="" type="2"/>
+    <File name="os/ucos/os/source/os_mutex.c" path="os/ucos/os/source/os_mutex.c" type="1"/>
+    <File name="cfg/stm32f4xx_conf.h" path="cfg/stm32f4xx_conf.h" type="1"/>
+    <File name="os/ucos/os/source/os_tick.c" path="os/ucos/os/source/os_tick.c" type="1"/>
+    <File name="drivers/bsp/bsp_int.c" path="drivers/bsp/bsp_int.c" type="1"/>
+  </Files>
+</Project>
