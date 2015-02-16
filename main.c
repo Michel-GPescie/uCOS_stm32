@@ -1,9 +1,12 @@
 #include <app_cfg.h>
 #include <bsp.h>
 #include <os.h>
+#include <blink.h>
+
+#define APP_TASK_START_STK_SIZE		256u
 
 static OS_TCB AppTaskStartTCB;
-static CPU_STK AppTaskStart[APP_TASK_START_STK_SIZE];
+static CPU_STK AppTaskStartStk[APP_TASK_START_STK_SIZE];
 
 static void AppTaskStart(void *p_arg);
 static void InitGPIO();
@@ -11,11 +14,55 @@ static void InitGPIO();
 void main(void){
 	OS_ERR err;
 
+	InitGPIO();
+	GPIOD->ODR ^= GPIO_Pin_12;
+
 	BSP_IntDisAll();
 	OSInit(&err);
 	if(err != OS_ERR_NONE){
-
+		GPIOD->BSRRL = GPIO_Pin_14;
 	}
+
+/*	CREATION DE TACHES : Format de declaration		*
+ * 	OSTaskCreate((OS_TCB 		*),
+				 (CPU_CHAR		*),
+				 (OS_TASK_PTR	 ),
+				 (void 			*),
+				 (OS_PRIO		 ),
+				 (CPU_STK 		*),
+				 (CPU_STK_SIZE 	 ),
+				 (CPU_STK_SIZE 	 ),
+				 (OS_MSG_QTY  	 ),
+				 (OS_TICK  		 ),
+				 (void 			*),
+				 (OS_OPT 		 ),
+				 (OS_ERR 		*)	);
+*/
+	OSTaskCreate((OS_TCB 		*)&AppTaskStartTCB,
+				 (CPU_CHAR		*)"First task",
+				 (OS_TASK_PTR	 )AppTaskStart,
+				 (void 			*)0,
+				 (OS_PRIO		 )APP_CFG_TASK_START_PRIO,
+				 (CPU_STK 		*)&AppTaskStartStk[0],
+				 (CPU_STK_SIZE 	 )APP_TASK_START_STK_SIZE / 10,
+				 (CPU_STK_SIZE 	 )APP_TASK_START_STK_SIZE,
+				 (OS_MSG_QTY  	 )0,
+				 (OS_TICK  		 )0,
+				 (void 			*)0,
+				 (OS_OPT 		 )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+				 (OS_ERR 		*)&err	);
+
+	if(err != OS_ERR_NONE){
+		GPIOD->BSRRL = GPIO_Pin_14;
+	}
+
+	OSStart(&err);
+
+	if(err != OS_ERR_NONE){
+		GPIOD->BSRRL = GPIO_Pin_14;
+		return -1;
+	}
+
 }
 
 static void InitGPIO(){
