@@ -79,8 +79,8 @@
     <File name="os/ucos/cfg/os_cfg_app.h" path="os/ucos/cfg/os_cfg_app.h" type="1"/>
     <File name="os/ucos/cfg/cpu_cfg.h" path="os/ucos/cfg/cpu_cfg.h" type="1"/>
     <File name="drivers/hal/include/stm32f4xx_fsmc.h" path="drivers/hal/include/stm32f4xx_fsmc.h" type="1"/>
-    <File name="drivers/cmsis/include/core_cm3.h" path="drivers/cmsis/include/core_cm3.h" type="1"/>
     <File name="drivers/hal/include/stm32f4xx_flash.h" path="drivers/hal/include/stm32f4xx_flash.h" type="1"/>
+    <File name="drivers/cmsis/include/core_cm3.h" path="drivers/cmsis/include/core_cm3.h" type="1"/>
     <File name="os/ucos/os/.DS_Store" path="os/ucos/os/.DS_Store" type="1"/>
     <File name="os/ucos/os/source/os_pend_multi.c" path="os/ucos/os/source/os_pend_multi.c" type="1"/>
     <File name="os/ucos/cpu/.DS_Store" path="os/ucos/cpu/.DS_Store" type="1"/>
@@ -264,8 +264,8 @@
     <File name="os/ucos/lib/lib_str.h" path="os/ucos/lib/lib_str.h" type="1"/>
     <File name="drivers/hal/source/stm32f4xx_gpio.c" path="drivers/hal/source/stm32f4xx_gpio.c" type="1"/>
     <File name="os/ucos/lib/ports" path="" type="2"/>
-    <File name="os/ucos/os/source/os_stat.c" path="os/ucos/os/source/os_stat.c" type="1"/>
     <File name="os" path="" type="2"/>
+    <File name="os/ucos/os/source/os_stat.c" path="os/ucos/os/source/os_stat.c" type="1"/>
     <File name="os/ucos/serial/Source" path="" type="2"/>
     <File name="syscalls" path="" type="2"/>
     <File name="drivers/hal/include/stm32f4xx_dma2d.h" path="drivers/hal/include/stm32f4xx_dma2d.h" type="1"/>
