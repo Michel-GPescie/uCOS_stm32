@@ -1,241 +1,244 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wall -ffunction-sections -g -O0 -std=c99 -c -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -D__FPU_USED -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\cpu\ARM-Cortex-M4 -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\cmsis\device\include -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Driver -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\cmsis\include -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\cfg -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Source -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os\ports -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\cmsis\device -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\OS -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\lib -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Driver\ST\STM3240x -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Line -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\bsp\os\ucos -I..\..\..\..\..\Users\Michel\Documents\Cours\RT -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os\ports\ARM-Cortex-M4 -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\cmsis -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\hal\include -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\cpu -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\hal -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\cfg -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\bsp\os -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os\ports\ARM-Cortex-M4\Generic -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Driver\ST -I..\..\..\..\..\Users\Michel\Documents\Cours -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32 -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os\source -I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\bsp">
-      <target file="serial_buf.o" lastModified="14b979c479f">
+      <target file="serial_buf.o" lastModified="14b9d620f90">
          <source file="..\..\..\os\ucos\serial\Source\serial_buf.c" lastModified="138e1eadd30"/>
       </target>
-      <target file="os_cpu_c.o" lastModified="14b979c35a8">
+      <target file="os_cpu_c.o" lastModified="14b9d61ff95">
          <source file="..\..\..\os\ucos\os\ports\ARM-Cortex-M4\Generic\os_cpu_c.c" lastModified="13894987dd0"/>
       </target>
-      <target file="bsp_os.o" lastModified="14b979c4929">
+      <target file="bsp_os.o" lastModified="14b9d62111b">
          <source file="..\..\..\drivers\bsp\os\ucos\bsp_os.c" lastModified="13c47ea58b0"/>
       </target>
-      <target file="os_core.o" lastModified="14b979c4a0a">
+      <target file="os_core.o" lastModified="14b9d6211ce">
          <source file="..\..\..\os\ucos\os\source\os_core.c" lastModified="13c67f41920"/>
       </target>
-      <target file="serial_line_dflt.o" lastModified="14b979c623b">
+      <target file="serial_line_dflt.o" lastModified="14b9d62269b">
          <source file="..\..\..\os\ucos\serial\Line\serial_line_dflt.c" lastModified="138e1ead560"/>
       </target>
-      <target file="stm32f4xx_usart.o" lastModified="14b979c37b0">
+      <target file="stm32f4xx_usart.o" lastModified="14b9d6200b4">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_usart.c" lastModified="141301497f0"/>
       </target>
-      <target file="misc.o" lastModified="14b979c6069">
+      <target file="misc.o" lastModified="14b9d622526">
          <source file="..\..\..\drivers\hal\source\misc.c" lastModified="141301497f0"/>
       </target>
-      <target file="cpu_c.o" lastModified="14b979c31d0">
+      <target file="cpu_c.o" lastModified="14b9d61fc65">
          <source file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu_c.c" lastModified="138949d09e0"/>
       </target>
-      <target file="os_cpu_a.o" lastModified="14b979c2d3d">
+      <target file="os_cpu_a.o" lastModified="14b9d61f8bf">
          <source file="..\..\..\os\ucos\os\ports\ARM-Cortex-M4\Generic\os_cpu_a.s" lastModified="1389494f390"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="14b979c4eeb">
+      <target file="stm32f4xx_gpio.o" lastModified="14b9d62175b">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_gpio.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_dbgmcu.o" lastModified="14b979c67af">
+      <target file="stm32f4xx_dbgmcu.o" lastModified="14b9d622c26">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_dbgmcu.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_rng.o" lastModified="14b979c5d60">
+      <target file="stm32f4xx_rng.o" lastModified="14b9d62230d">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_rng.c" lastModified="141301497f0"/>
       </target>
-      <target file="serial_line_tty.o" lastModified="14b979c4698">
+      <target file="serial_line_tty.o" lastModified="14b9d620eac">
          <source file="..\..\..\os\ucos\serial\Line\serial_line_tty.c" lastModified="13a54989a10"/>
       </target>
-      <target file="serial_os.o" lastModified="14b979c4d04">
+      <target file="serial_os.o" lastModified="14b9d621507">
          <source file="..\..\..\os\ucos\serial\OS\uCOS-III\serial_os.c" lastModified="138e1ead560"/>
       </target>
-      <target file="serial_bsp_stm3240x.o" lastModified="14b979c5cbd">
+      <target file="serial_bsp_stm3240x.o" lastModified="14b9d622255">
          <source file="..\..\..\os\ucos\serial\Driver\ST\STM3240x\serial_bsp_stm3240x.c" lastModified="138e1eacd90"/>
       </target>
-      <target file="stm32f4xx_flash.o" lastModified="14b979c5096">
+      <target file="stm32f4xx_flash.o" lastModified="14b9d621848">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_flash.c" lastModified="141301497f0"/>
       </target>
-      <target file="cpu_a.o" lastModified="14b979c2ca4">
+      <target file="cpu_a.o" lastModified="14b9d61f83a">
          <source file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu_a.s" lastModified="138949de4a0"/>
       </target>
-      <target file="stm32f4xx_crc.o" lastModified="14b979c408e">
+      <target file="stm32f4xx_crc.o" lastModified="14b9d6208f8">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_crc.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_adc.o" lastModified="14b979c44f5">
+      <target file="stm32f4xx_adc.o" lastModified="14b9d620d2d">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_adc.c" lastModified="141301497f0"/>
       </target>
-      <target file="os_task.o" lastModified="14b979c578a">
+      <target file="os_task.o" lastModified="14b9d621d43">
          <source file="..\..\..\os\ucos\os\source\os_task.c" lastModified="13c67f41920"/>
       </target>
-      <target file="stm32f4xx_cryp_tdes.o" lastModified="14b979c65f7">
+      <target file="stm32f4xx_cryp_tdes.o" lastModified="14b9d622a45">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_tdes.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_iwdg.o" lastModified="14b979c4137">
+      <target file="stm32f4xx_iwdg.o" lastModified="14b9d62099d">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_iwdg.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_sdio.o" lastModified="14b979c2ef6">
+      <target file="stm32f4xx_sdio.o" lastModified="14b9d61f98e">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_sdio.c" lastModified="141301497f0"/>
       </target>
-      <target file="os_tick.o" lastModified="14b979c3ab4">
+      <target file="os_tick.o" lastModified="14b9d620377">
          <source file="..\..\..\os\ucos\os\source\os_tick.c" lastModified="13c67f41920"/>
       </target>
-      <target file="stm32f4xx_syscfg.o" lastModified="14b979c2c94">
+      <target file="stm32f4xx_syscfg.o" lastModified="14b9d61f82b">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_syscfg.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_cryp_des.o" lastModified="14b979c4aaa">
+      <target file="stm32f4xx_cryp_des.o" lastModified="14b9d621272">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_des.c" lastModified="141301497f0"/>
       </target>
-      <target file="os_msg.o" lastModified="14b979c3e5c">
+      <target file="sorting.o" lastModified="14b9d6205e7">
+         <source file="..\..\..\sorting.c" lastModified="14b9d539e30"/>
+      </target>
+      <target file="os_msg.o" lastModified="14b9d6207c3">
          <source file="..\..\..\os\ucos\os\source\os_msg.c" lastModified="13c67f41920"/>
       </target>
-      <target file="stm32f4xx_i2c.o" lastModified="14b979c5bb7">
+      <target file="stm32f4xx_i2c.o" lastModified="14b9d622123">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_i2c.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_dcmi.o" lastModified="14b979c462e">
+      <target file="stm32f4xx_dcmi.o" lastModified="14b9d620e46">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_dcmi.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_pwr.o" lastModified="14b979c3880">
+      <target file="stm32f4xx_pwr.o" lastModified="14b9d62015a">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_pwr.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_can.o" lastModified="14b979c3a2f">
+      <target file="stm32f4xx_can.o" lastModified="14b9d6202f2">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_can.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_ltdc.o" lastModified="14b979c3d82">
+      <target file="stm32f4xx_ltdc.o" lastModified="14b9d6206e7">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_ltdc.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_rtc.o" lastModified="14b979c6354">
+      <target file="stm32f4xx_rtc.o" lastModified="14b9d6227ad">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_rtc.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_wwdg.o" lastModified="14b979c3b72">
-         <source file="..\..\..\drivers\hal\source\stm32f4xx_wwdg.c" lastModified="141301497f0"/>
-      </target>
-      <target file="stm32f4xx_tim.o" lastModified="14b979c671a">
+      <target file="stm32f4xx_tim.o" lastModified="14b9d622b70">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_tim.c" lastModified="141301497f0"/>
       </target>
-      <target file="syscalls.o" lastModified="14b979c53d5">
+      <target file="stm32f4xx_wwdg.o" lastModified="14b9d62042b">
+         <source file="..\..\..\drivers\hal\source\stm32f4xx_wwdg.c" lastModified="141301497f0"/>
+      </target>
+      <target file="syscalls.o" lastModified="14b9d621a9c">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="147640c4700"/>
       </target>
-      <target file="bsp_periph.o" lastModified="14b979c4e41">
+      <target file="bsp_periph.o" lastModified="14b9d621676">
          <source file="..\..\..\drivers\bsp\bsp_periph.c" lastModified="13adeeddef0"/>
       </target>
-      <target file="stm32f4xx_cryp.o" lastModified="14b979c4bd5">
+      <target file="stm32f4xx_cryp.o" lastModified="14b9d6213bc">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp.c" lastModified="141301497f0"/>
       </target>
-      <target file="lib_math.o" lastModified="14b979c51c7">
+      <target file="lib_math.o" lastModified="14b9d62189c">
          <source file="..\..\..\os\ucos\lib\lib_math.c" lastModified="13ba8c40970"/>
       </target>
-      <target file="os_tmr.o" lastModified="14b979c5fb2">
+      <target file="os_tmr.o" lastModified="14b9d622473">
          <source file="..\..\..\os\ucos\os\source\os_tmr.c" lastModified="13c67f41920"/>
       </target>
-      <target file="stm32f4xx_sai.o" lastModified="14b979c529d">
+      <target file="stm32f4xx_sai.o" lastModified="14b9d62197e">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_sai.c" lastModified="141301497f0"/>
       </target>
-      <target file="os_q.o" lastModified="14b979c56b0">
+      <target file="os_q.o" lastModified="14b9d621c8b">
          <source file="..\..\..\os\ucos\os\source\os_q.c" lastModified="13c67f41920"/>
       </target>
-      <target file="stm32f4xx_dac.o" lastModified="14b979c3cb8">
+      <target file="stm32f4xx_dac.o" lastModified="14b9d6205a7">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_dac.c" lastModified="141301497f0"/>
       </target>
-      <target file="lib_mem.o" lastModified="14b979c33c2">
-         <source file="..\..\..\os\ucos\lib\lib_mem.c" lastModified="13ba8c40970"/>
-      </target>
-      <target file="lib_mem_a.o" lastModified="14b979c6365">
+      <target file="lib_mem_a.o" lastModified="14b9d6229a2">
          <source file="..\..\..\os\ucos\lib\ports\ARM-Cortex-M4\lib_mem_a.s" lastModified="14764179970"/>
       </target>
-      <target file="cstartup.o" lastModified="14b979c580e">
+      <target file="lib_mem.o" lastModified="14b9d61fe85">
+         <source file="..\..\..\os\ucos\lib\lib_mem.c" lastModified="13ba8c40970"/>
+      </target>
+      <target file="cstartup.o" lastModified="14b9d621dd4">
          <source file="..\..\..\drivers\bsp\cstartup.s" lastModified="149d385ce10"/>
       </target>
-      <target file="os_int.o" lastModified="14b979c61ba">
+      <target file="os_int.o" lastModified="14b9d622646">
          <source file="..\..\..\os\ucos\os\source\os_int.c" lastModified="13c67f41920"/>
       </target>
-      <target file="serial_line_probe.o" lastModified="14b979c54f8">
+      <target file="serial_line_probe.o" lastModified="14b9d621bc1">
          <source file="..\..\..\os\ucos\serial\Line\serial_line_probe.c" lastModified="138e1ead560"/>
       </target>
-      <target file="os_flag.o" lastModified="14b979c392f">
+      <target file="os_flag.o" lastModified="14b9d6201f5">
          <source file="..\..\..\os\ucos\os\source\os_flag.c" lastModified="13c67f41920"/>
       </target>
-      <target file="stm32f4xx_hash.o" lastModified="14b979c3278">
+      <target file="stm32f4xx_hash.o" lastModified="14b9d61fd1d">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_hash.c" lastModified="141301497f0"/>
       </target>
-      <target file="os_dbg.o" lastModified="14b979c4571">
+      <target file="os_dbg.o" lastModified="14b9d620d8e">
          <source file="..\..\..\os\ucos\os\source\os_dbg.c" lastModified="13c67f41920"/>
       </target>
-      <target file="lib_str.o" lastModified="14b979c3fd7">
+      <target file="lib_str.o" lastModified="14b9d62084a">
          <source file="..\..\..\os\ucos\lib\lib_str.c" lastModified="13ba8c40970"/>
       </target>
-      <target file="os_sem.o" lastModified="14b979c4738">
+      <target file="os_sem.o" lastModified="14b9d620f2c">
          <source file="..\..\..\os\ucos\os\source\os_sem.c" lastModified="13c67f41920"/>
       </target>
-      <target file="os_cfg_app.o" lastModified="14b979c561f">
+      <target file="os_cfg_app.o" lastModified="14b9d621c15">
          <source file="..\..\..\os\ucos\os\source\os_cfg_app.c" lastModified="13c67f41920"/>
       </target>
-      <target file="stm32f4xx_hash_sha1.o" lastModified="14b979c3539">
+      <target file="stm32f4xx_hash_sha1.o" lastModified="14b9d61ff31">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_hash_sha1.c" lastModified="141301497f0"/>
       </target>
-      <target file="os_stat.o" lastModified="14b979c4b1f">
+      <target file="os_stat.o" lastModified="14b9d6212ed">
          <source file="..\..\..\os\ucos\os\source\os_stat.c" lastModified="13c67f41920"/>
       </target>
-      <target file="os_time.o" lastModified="14b979c2d2d">
+      <target file="os_time.o" lastModified="14b9d61f8b0">
          <source file="..\..\..\os\ucos\os\source\os_time.c" lastModified="13c67f41920"/>
       </target>
-      <target file="os_mutex.o" lastModified="14b979c58a3">
+      <target file="os_mutex.o" lastModified="14b9d621e5f">
          <source file="..\..\..\os\ucos\os\source\os_mutex.c" lastModified="13c67f41920"/>
       </target>
-      <target file="serial.o" lastModified="14b979c6153">
+      <target file="serial.o" lastModified="14b9d6225e5">
          <source file="..\..\..\os\ucos\serial\Source\serial.c" lastModified="13a5497afb0"/>
       </target>
-      <target file="stm32f4xx_exti.o" lastModified="14b979c5e2e">
+      <target file="stm32f4xx_exti.o" lastModified="14b9d6223d1">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_exti.c" lastModified="141301497f0"/>
       </target>
-      <target file="cpu_core.o" lastModified="14b979c3609">
+      <target file="cpu_core.o" lastModified="14b9d61fff6">
          <source file="..\..\..\os\ucos\cpu\cpu_core.c" lastModified="138939e1070"/>
       </target>
-      <target file="os_mem.o" lastModified="14b979c4d67">
+      <target file="os_mem.o" lastModified="14b9d621571">
          <source file="..\..\..\os\ucos\os\source\os_mem.c" lastModified="13c67f41920"/>
       </target>
-      <target file="lib_ascii.o" lastModified="14b979c4408">
+      <target file="lib_ascii.o" lastModified="14b9d620c56">
          <source file="..\..\..\os\ucos\lib\lib_ascii.c" lastModified="13ba8c40970"/>
       </target>
-      <target file="stm32f4xx_hash_md5.o" lastModified="14b979c3c11">
+      <target file="stm32f4xx_hash_md5.o" lastModified="14b9d6204e2">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_hash_md5.c" lastModified="141301497f0"/>
       </target>
-      <target file="os_pend_multi.o" lastModified="14b979c2bce">
+      <target file="os_pend_multi.o" lastModified="14b9d61f749">
          <source file="..\..\..\os\ucos\os\source\os_pend_multi.c" lastModified="13c67f41920"/>
       </target>
-      <target file="os_var.o" lastModified="14b979c3dec">
+      <target file="os_var.o" lastModified="14b9d620757">
          <source file="..\..\..\os\ucos\os\source\os_var.c" lastModified="13c67f41920"/>
       </target>
-      <target file="bsp_int.o" lastModified="14b979c3061">
+      <target file="bsp_int.o" lastModified="14b9d61fae3">
          <source file="..\..\..\drivers\bsp\bsp_int.c" lastModified="13adeeddef0"/>
       </target>
-      <target file="stm32f4xx_cryp_aes.o" lastModified="14b979c316e">
+      <target file="stm32f4xx_cryp_aes.o" lastModified="14b9d61fc05">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_aes.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_fsmc.o" lastModified="14b979c4c96">
+      <target file="stm32f4xx_fsmc.o" lastModified="14b9d621493">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_fsmc.c" lastModified="146ebb8f690"/>
       </target>
-      <target file="serial_drv_stm32.o" lastModified="14b979c43b3">
+      <target file="serial_drv_stm32.o" lastModified="14b9d620bf7">
          <source file="..\..\..\os\ucos\serial\Driver\ST\serial_drv_stm32.c" lastModified="138e1eacd90"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="14b979c534a">
+      <target file="system_stm32f4xx.o" lastModified="14b9d621a1c">
          <source file="..\..\..\drivers\cmsis\device\source\templates\system_stm32f4xx.c" lastModified="1446a0b10d0"/>
       </target>
-      <target file="stm32f4xx_dma.o" lastModified="14b979c549b">
-         <source file="..\..\..\drivers\hal\source\stm32f4xx_dma.c" lastModified="141301497f0"/>
-      </target>
-      <target file="stm32f4xx_spi.o" lastModified="14b979c5993">
+      <target file="stm32f4xx_spi.o" lastModified="14b9d621f20">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_spi.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="14b979c434d">
+      <target file="stm32f4xx_dma.o" lastModified="14b9d621b67">
+         <source file="..\..\..\drivers\hal\source\stm32f4xx_dma.c" lastModified="141301497f0"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="14b9d620b90">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_rcc.c" lastModified="141301497f0"/>
       </target>
-      <target file="os_prio.o" lastModified="14b979c4809">
+      <target file="os_prio.o" lastModified="14b9d620ff7">
          <source file="..\..\..\os\ucos\os\source\os_prio.c" lastModified="13c67f41920"/>
       </target>
-      <target file="main.o" lastModified="14b97a3606c">
-         <source file="..\..\..\main.c" lastModified="14b97a35534"/>
-      </target>
-      <target file="stm32f4xx_dma2d.o" lastModified="14b979c332b">
+      <target file="stm32f4xx_dma2d.o" lastModified="14b9d61fddf">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_dma2d.c" lastModified="141301497f0"/>
       </target>
-      <target file="bsp.o" lastModified="14b979c5ac3">
-         <source file="..\..\..\drivers\bsp\bsp.c" lastModified="13c62b81240"/>
+      <target file="main.o" lastModified="14b9d620aa9">
+         <source file="..\..\..\main.c" lastModified="14b9d270c85"/>
       </target>
-      <target file="os_app_hooks.o" lastModified="14b979c57ff">
+      <target file="bsp.o" lastModified="14b9d62201b">
+         <source file="..\..\..\drivers\bsp\bsp.c" lastModified="14b9cc9bbc5"/>
+      </target>
+      <target file="os_app_hooks.o" lastModified="14b9d621dc6">
          <source file="..\..\..\os_app_hooks.c" lastModified="13c61d829f0"/>
       </target>
    </processor>

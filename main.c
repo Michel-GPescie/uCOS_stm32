@@ -1,109 +1,170 @@
-#include "stm32f4xx.h"
-#include "stm32f4xx_rcc.h"
-#include "stm32f4xx_gpio.h"
+#include  <app_cfg.h>
+#include  <includes.h>
 
-#include <app_cfg.h>
-#include <bsp.h>
-#include <os.h>
-#include <blink.h>
-#include <pinmap.h>
+#define BUTTON (GPIOA->IDR & 0x0001)
+#define BUTTON_STK_SIZE 16u
+#define BUTTON_TASK_PRIO 8u
 
-#define APP_TASK_START_STK_SIZE		256u
-/*
-static OS_TCB AppTaskStartTCB;
-static CPU_STK AppTaskStartStk[APP_TASK_START_STK_SIZE];
+/* Tasks' control blocks. ---------------------------------------------------------------*/
 
-static void AppTaskStart(void *p_arg);
-*/
-static void InitGPIO();
+static  OS_TCB   AppTaskStartTCB;
+static OS_TCB buttonTCB;
 
-int main(void){
-	OS_ERR err;
+/* Tasks' stack. ------------------------------------------------------------------------*/
 
+static  CPU_STK  AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE];
+static	CPU_STK buttonSTK[BUTTON_STK_SIZE];
 
-	GPIO_InitTypeDef GPIO_InitStruct;
+/* Tasks. -------------------------------------------------------------------------------*/
+
+static  void  AppTaskStart          (void     *p_arg);
+static void buttonTask(void *p_arg);
+
+/* Main program. ------------------------------------------------------------------------*/
+
+int main(void) {
+
+	OS_ERR  			oseError;
+
+	GPIO_InitTypeDef	GPIO_InitStructure;
+
+    /* GPIOD peripheral. */
+
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOD, ENABLE);
-	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_14 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_15;
-	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_Init(GPIOD, &GPIO_InitStruct);
-	while(1){
-		GPIOD->BSRRL = GPIO_Pin_12;
-		GPIOD->ODR ^= GPIO_Pin_12;
-	}
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13| GPIO_Pin_14| GPIO_Pin_15;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
 
-/*	BSP_IntDisAll();
-	OSInit(&err);
-	if(err != OS_ERR_NONE){
-		GPIOD->BSRRL = GPIO_Pin_14;
-	}
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-/*	CREATION DE TACHES : Format de declaration		*
- * 	OSTaskCreate((OS_TCB 		*),
-				 (CPU_CHAR		*),
-				 (OS_TASK_PTR	 ),
-				 (void 			*),
-				 (OS_PRIO		 ),
-				 (CPU_STK 		*),
-				 (CPU_STK_SIZE 	 ),
-				 (CPU_STK_SIZE 	 ),
-				 (OS_MSG_QTY  	 ),
-				 (OS_TICK  		 ),
-				 (void 			*),
-				 (OS_OPT 		 ),
-				 (OS_ERR 		*)	);
-*/
-/*	OSTaskCreate((OS_TCB 		*)&AppTaskStartTCB,
-				 (CPU_CHAR		*)"First task",
-				 (OS_TASK_PTR	 )AppTaskStart,
-				 (void 			*)0,
-				 (OS_PRIO		 )APP_CFG_TASK_START_PRIO,
-				 (CPU_STK 		*)&AppTaskStartStk[0],
-				 (CPU_STK_SIZE 	 )APP_TASK_START_STK_SIZE / 10,
-				 (CPU_STK_SIZE 	 )APP_TASK_START_STK_SIZE,
-				 (OS_MSG_QTY  	 )0,
-				 (OS_TICK  		 )0,
-				 (void 			*)0,
-				 (OS_OPT 		 )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
-				 (OS_ERR 		*)&err	);
+    /* Disable all interrupts. */
 
-	if(err != OS_ERR_NONE){
-		GPIOD->BSRRL = GPIO_Pin_14;
-	}
-*/
-	OSStart(&err);
-/*
-	if(err != OS_ERR_NONE){
-		GPIOD->BSRRL = GPIO_Pin_14;
-		return -1;
-	}*/
-	return 0;
+    BSP_IntDisAll();
 
+    /* OS initialization. */
+
+    OSInit(&oseError);
+
+    OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,
+                 (CPU_CHAR     *)"App Task Start",
+                 (OS_TASK_PTR   )AppTaskStart, 
+                 (void         *)0,
+                 (OS_PRIO       )APP_CFG_TASK_START_PRIO,
+                 (CPU_STK      *)&AppTaskStartStk[0],
+                 (CPU_STK_SIZE  )AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE / 10],
+                 (CPU_STK_SIZE  )APP_CFG_TASK_START_STK_SIZE,
+                 (OS_MSG_QTY    )0,
+                 (OS_TICK       )0,
+                 (void         *)0,
+                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                 (OS_ERR       *)&oseError);
+
+/*  Exemple de creation de tache :
+ * 	OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,
+                 (CPU_CHAR     *)"App Task Start",
+                 (OS_TASK_PTR   )AppTaskStart,
+                 (void         *)0,
+                 (OS_PRIO       )APP_CFG_TASK_START_PRIO,
+                 (CPU_STK      *)&AppTaskStartStk[0],
+                 (CPU_STK_SIZE  )AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE / 10],
+                 (CPU_STK_SIZE  )APP_CFG_TASK_START_STK_SIZE,
+                 (OS_MSG_QTY    )0,
+                 (OS_TICK       )0,
+                 (void         *)0,
+                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                 (OS_ERR       *)&oseError);
+                 */
+    OSTaskCreate((OS_TCB       *)&buttonTCB,
+                 (CPU_CHAR     *)"TI bouton",
+                 (OS_TASK_PTR   )buttonTask,
+                 (void         *)0,
+                 (OS_PRIO       )BUTTON_TASK_PRIO,
+                 (CPU_STK      *)&buttonSTK[0],
+                 (CPU_STK_SIZE  )buttonSTK[BUTTON_STK_SIZE / 2],
+                 (CPU_STK_SIZE  )BUTTON_STK_SIZE,
+                 (OS_MSG_QTY    )0,
+                 (OS_TICK       )0,
+                 (void         *)0,
+                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                 (OS_ERR       *)&oseError);
+    /* Start multitasking. */
+
+    OSStart(&oseError);
+
+    (void)&oseError;
+    
+    return(0);
 }
 
-static void InitGPIO(){
-	GPIO_InitTypeDef GPIO_InitStruct;
+static void AppTaskStart(void *p_arg) {
 
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
-	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_14 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_15;
-	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_Init(GPIOD, &GPIO_InitStruct);
-}
+	OS_ERR	oseError;
 
-static void AppTaskStart(void *p_arg)	{
-	OS_ERR err;
+	(void)p_arg;
+
+	/* Initialize BSP functions. */
 
 	BSP_Init();
+
+	/* Initialize the uC/CPU services. */
+
 	CPU_Init();
+
+	/* Start tick initialization. */
+
 	BSP_Tick_Init();
 
-	while(DEF_ON){
-		GPIOD->ODR ^= GPIO_Pin_12;
-		OSTimeDlyHMSM(0, 0, 0, 100, OS_OPT_TIME_HMSM_STRICT, &err);
+	/* Initialize memory management module. */
+
+	Mem_Init();
+
+	/* Initialize mathematical module. */
+
+	Math_Init();
+
+#if OS_CFG_STAT_TASK_EN > 0u
+
+	/* Compute CPU capacity with no task running. */
+
+	OSStatTaskCPUUsageInit(&oseError);
+
+#endif
+
+#ifdef CPU_CFG_INT_DIS_MEAS_EN
+
+	CPU_IntDisMeasMaxCurReset();
+
+#endif
+
+    while(DEF_TRUE) {
+        GPIOD->ODR ^= GPIO_Pin_15;
+
+        /* Time delay. */
+        OSTimeDlyHMSM(0, 0, 0, 100, OS_OPT_TIME_HMSM_STRICT, &oseError);
+    }
+}
+
+void buttonTask(void *p_arg){
+
+}
+
+#define USE_FULL_ASSERT
+
+#ifdef USE_FULL_ASSERT
+void assert_failed(uint8_t* file, uint32_t line) {
+	/* Switch off all leds. */
+	GPIOD->BSRRH = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+
+	while(1) {
+		GPIOD->ODR ^= GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+
+		/* Delay. */
+		for(uint32_t i = 0; i < 10000000; i++);
 	}
 }
+#endif
