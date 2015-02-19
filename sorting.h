@@ -1,7 +1,7 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * *
  * 												 *
  * Projet Temps Reel - Polytech Montpellier		 *
- * 		Alexandre Cazeaux						 *
+ * 		Alexandre Cazaux						 *
  * 		Michel Gomez-Pescie						 *
  * 		Fevrier 2015							 *
  * 												 *
@@ -29,7 +29,7 @@
 /* * * * * * * * * * * * * * * * * * * * * * */
 /* * * * *		Tapis entree		 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
-#define TAPIS_ENTREE_STK_SIZE 32u
+#define TAPIS_ENTREE_STK_SIZE 128u
 #define TAPIS_ENTREE_PRIO	10u
 
 OS_TCB tapisEntreeTCB;
@@ -40,7 +40,7 @@ void tapisEntreeTask(void *p_arg);
 /* * * * * * * * * * * * * * * * * * * * * * */
 /* * * * *		Tapis transfert		 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
-#define TAPIS_TRANSFERT_STK_SIZE 32u
+#define TAPIS_TRANSFERT_STK_SIZE 128u
 #define TAPIS_TRANSFERT_PRIO	10u
 
 OS_TCB tapisTransfertTCB;
@@ -51,7 +51,7 @@ void tapisTransfertTask(void *p_arg);
 /* * * * * * * * * * * * * * * * * * * * * * */
 /* * * * *			Tri		 		 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
-#define TRI_STK_SIZE 32u
+#define TRI_STK_SIZE 128u
 #define TRI_PRIO	10u
 
 OS_TCB triTCB;
@@ -63,7 +63,7 @@ void triTask(void *p_arg);
 /* * * * * * * * * * * * * * * * * * * * * * */
 /* * * * *			Rotor			 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
-#define ROTOR_STK_SIZE 32u
+#define ROTOR_STK_SIZE 128u
 #define ROTOR_PRIO	10u
 
 OS_TCB rotorTCB;
@@ -74,7 +74,7 @@ void rotorTask(void *p_arg);
 /* * * * * * * * * * * * * * * * * * * * * * */
 /* * * * *		Evacuation Gauche	 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
-#define EVAC_GAUCHE_STK_SIZE 32u
+#define EVAC_GAUCHE_STK_SIZE 128u
 #define EVAC_GAUCHE_PRIO	10u
 
 OS_TCB evacGaucheTCB;
@@ -85,7 +85,7 @@ void evacGaucheTask(void *p_arg);
 /* * * * * * * * * * * * * * * * * * * * * * */
 /* * * * *		Evacuation Droite	 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
-#define EVAC_DROITE_STK_SIZE 32u
+#define EVAC_DROITE_STK_SIZE 128u
 #define EVAC_DROITE_PRIO	10u
 
 OS_TCB evacDroiteTCB;
