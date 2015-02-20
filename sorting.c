@@ -25,19 +25,19 @@ void tapisEntreeTask(void *p_arg)	{
 		switch(Etat_0)
 		{
 			case P4:
-				if(GPIO_ReadInputDataBit(IDI_SLOT1_PORT, IDI_0)==1)	{
+				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_0)==1)	{
 					Etat_0 = P5;
 					OSTaskSemPost(&Sem0to1, OS_OPT_POST_1, &err);
 				} else {
-					OSTimeDlyHMSM(0, 0, 0, 50, OS_OPT_TIME_HMSM_STRICT, &err);
+					OSTimeDlyHMSM(0, 0, 0, 1, OS_OPT_TIME_HMSM_STRICT, &err);
 				}
 				break;
 			case P5:
-				if (GPIO_ReadInputDataBit(IDI_SLOT1_PORT, IDI_0)==0) {
+				if (GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_0)==0) {
 					Etat_0 = P8;
 					GPIO_SetBits(IDI_SLOT1_PORT, IDI_0);
 				} else {
-					OSTimeDlyHMSM(0, 0, 0, 50, OS_OPT_TIME_HMSM_STRICT, &err);
+					OSTimeDlyHMSM(0, 0, 0, 1, OS_OPT_TIME_HMSM_STRICT, &err);
 				}
 				break;
 			case P8:
@@ -99,7 +99,7 @@ void tapisTransfertTask(void *p_arg)	{
 				}
 				else
 				{
-					OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT, &err);
+					OSTimeDlyHMSM(0,0,0,1,OS_OPT_TIME_HMSM_STRICT, &err);
 				}
 				break;
 
@@ -115,7 +115,7 @@ void tapisTransfertTask(void *p_arg)	{
 				}
 				else
 				{
-					OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT, &err);
+					OSTimeDlyHMSM(0,0,0,1,OS_OPT_TIME_HMSM_STRICT, &err);
 				}
 				break;
 			Default:

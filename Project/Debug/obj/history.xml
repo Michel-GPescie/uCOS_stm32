@@ -79,8 +79,8 @@
       <target file="stm32f4xx_cryp_des.o" lastModified="14b9d621272">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_des.c" lastModified="141301497f0"/>
       </target>
-      <target file="sorting.o" lastModified="14ba7a9ae59">
-         <source file="..\..\..\sorting.c" lastModified="14ba7a5279b"/>
+      <target file="sorting.o" lastModified="14ba7bae1af">
+         <source file="..\..\..\sorting.c" lastModified="14ba7bacfde"/>
       </target>
       <target file="os_msg.o" lastModified="14b9d6207c3">
          <source file="..\..\..\os\ucos\os\source\os_msg.c" lastModified="13c67f41920"/>
@@ -229,7 +229,7 @@
       <target file="os_prio.o" lastModified="14b9d620ff7">
          <source file="..\..\..\os\ucos\os\source\os_prio.c" lastModified="13c67f41920"/>
       </target>
-      <target file="main.o" lastModified="14ba7a9af6a">
+      <target file="main.o" lastModified="14ba7b78c26">
          <source file="..\..\..\main.c" lastModified="14ba7a7cdf8"/>
       </target>
       <target file="stm32f4xx_dma2d.o" lastModified="14b9d61fddf">

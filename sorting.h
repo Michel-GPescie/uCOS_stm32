@@ -42,7 +42,7 @@ OS_SEM Sem1to3;
 /* * * * *		Tapis entree		 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
 #define TAPIS_ENTREE_STK_SIZE 128u
-#define TAPIS_ENTREE_PRIO	11u
+#define TAPIS_ENTREE_PRIO	10u
 
 OS_TCB tapisEntreeTCB;
 CPU_STK tapisEntreeSTK[TAPIS_ENTREE_STK_SIZE];

@@ -2932,7 +2932,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm
 LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o
                 0x20020000                _eram = 0x20020000
 
-.text           0x08000000     0x5a8c
+.text           0x08000000     0x5aa8
  *(.isr_vector)
  .isr_vector    0x08000000      0x188 ..\obj\cstartup.o
                 0x08000000                g_pfnVectors
@@ -3299,348 +3299,348 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm
                 0x08001374      0x1f4 ..\obj\os_tick.o
                 0x08001374                OS_TickListUpdate
  .text.tapisEntreeTask
-                0x08001568       0xc4 ..\obj\sorting.o
+                0x08001568       0xe0 ..\obj\sorting.o
                 0x08001568                tapisEntreeTask
  .text.tapisTransfertTask
-                0x0800162c      0x124 ..\obj\sorting.o
-                0x0800162c                tapisTransfertTask
- .text.triTask  0x08001750       0x14 ..\obj\sorting.o
-                0x08001750                triTask
+                0x08001648      0x124 ..\obj\sorting.o
+                0x08001648                tapisTransfertTask
+ .text.triTask  0x0800176c       0x14 ..\obj\sorting.o
+                0x0800176c                triTask
  .text.evacGaucheTask
-                0x08001764       0x14 ..\obj\sorting.o
-                0x08001764                evacGaucheTask
+                0x08001780       0x14 ..\obj\sorting.o
+                0x08001780                evacGaucheTask
  .text.evacDroiteTask
-                0x08001778       0x14 ..\obj\sorting.o
-                0x08001778                evacDroiteTask
+                0x08001794       0x14 ..\obj\sorting.o
+                0x08001794                evacDroiteTask
  .text.OS_MsgPoolInit
-                0x0800178c       0xd0 ..\obj\os_msg.o
-                0x0800178c                OS_MsgPoolInit
+                0x080017a8       0xd0 ..\obj\os_msg.o
+                0x080017a8                OS_MsgPoolInit
  .text.OS_MsgQFreeAll
-                0x0800185c       0x78 ..\obj\os_msg.o
-                0x0800185c                OS_MsgQFreeAll
+                0x08001878       0x78 ..\obj\os_msg.o
+                0x08001878                OS_MsgQFreeAll
  .text.OS_MsgQInit
-                0x080018d4       0x34 ..\obj\os_msg.o
-                0x080018d4                OS_MsgQInit
- .text.main     0x08001908      0x208 ..\obj\main.o
-                0x08001908                main
+                0x080018f0       0x34 ..\obj\os_msg.o
+                0x080018f0                OS_MsgQInit
+ .text.main     0x08001924      0x208 ..\obj\main.o
+                0x08001924                main
  .text.AppTaskStart
-                0x08001b10       0x2c ..\obj\main.o
+                0x08001b2c       0x2c ..\obj\main.o
  .text.initPinmap
-                0x08001b3c       0xd0 ..\obj\main.o
+                0x08001b58       0xd0 ..\obj\main.o
  .text.RCC_DeInit
-                0x08001c0c       0x70 ..\obj\stm32f4xx_rcc.o
-                0x08001c0c                RCC_DeInit
+                0x08001c28       0x70 ..\obj\stm32f4xx_rcc.o
+                0x08001c28                RCC_DeInit
  .text.RCC_HSEConfig
-                0x08001c7c       0x24 ..\obj\stm32f4xx_rcc.o
-                0x08001c7c                RCC_HSEConfig
+                0x08001c98       0x24 ..\obj\stm32f4xx_rcc.o
+                0x08001c98                RCC_HSEConfig
  .text.RCC_WaitForHSEStartUp
-                0x08001ca0       0x50 ..\obj\stm32f4xx_rcc.o
-                0x08001ca0                RCC_WaitForHSEStartUp
+                0x08001cbc       0x50 ..\obj\stm32f4xx_rcc.o
+                0x08001cbc                RCC_WaitForHSEStartUp
  .text.RCC_PLLConfig
-                0x08001cf0       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08001cf0                RCC_PLLConfig
+                0x08001d0c       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08001d0c                RCC_PLLConfig
  .text.RCC_PLLCmd
-                0x08001d2c       0x20 ..\obj\stm32f4xx_rcc.o
-                0x08001d2c                RCC_PLLCmd
+                0x08001d48       0x20 ..\obj\stm32f4xx_rcc.o
+                0x08001d48                RCC_PLLCmd
  .text.RCC_SYSCLKConfig
-                0x08001d4c       0x38 ..\obj\stm32f4xx_rcc.o
-                0x08001d4c                RCC_SYSCLKConfig
+                0x08001d68       0x38 ..\obj\stm32f4xx_rcc.o
+                0x08001d68                RCC_SYSCLKConfig
  .text.RCC_GetSYSCLKSource
-                0x08001d84       0x20 ..\obj\stm32f4xx_rcc.o
-                0x08001d84                RCC_GetSYSCLKSource
+                0x08001da0       0x20 ..\obj\stm32f4xx_rcc.o
+                0x08001da0                RCC_GetSYSCLKSource
  .text.RCC_HCLKConfig
-                0x08001da4       0x38 ..\obj\stm32f4xx_rcc.o
-                0x08001da4                RCC_HCLKConfig
+                0x08001dc0       0x38 ..\obj\stm32f4xx_rcc.o
+                0x08001dc0                RCC_HCLKConfig
  .text.RCC_PCLK1Config
-                0x08001ddc       0x38 ..\obj\stm32f4xx_rcc.o
-                0x08001ddc                RCC_PCLK1Config
+                0x08001df8       0x38 ..\obj\stm32f4xx_rcc.o
+                0x08001df8                RCC_PCLK1Config
  .text.RCC_PCLK2Config
-                0x08001e14       0x38 ..\obj\stm32f4xx_rcc.o
-                0x08001e14                RCC_PCLK2Config
+                0x08001e30       0x38 ..\obj\stm32f4xx_rcc.o
+                0x08001e30                RCC_PCLK2Config
  .text.RCC_GetClocksFreq
-                0x08001e4c      0x154 ..\obj\stm32f4xx_rcc.o
-                0x08001e4c                RCC_GetClocksFreq
+                0x08001e68      0x154 ..\obj\stm32f4xx_rcc.o
+                0x08001e68                RCC_GetClocksFreq
  .text.RCC_AHB1PeriphClockCmd
-                0x08001fa0       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08001fa0                RCC_AHB1PeriphClockCmd
+                0x08001fbc       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08001fbc                RCC_AHB1PeriphClockCmd
  .text.RCC_GetFlagStatus
-                0x08001fdc       0x74 ..\obj\stm32f4xx_rcc.o
-                0x08001fdc                RCC_GetFlagStatus
+                0x08001ff8       0x74 ..\obj\stm32f4xx_rcc.o
+                0x08001ff8                RCC_GetFlagStatus
  .text.OS_Dbg_Init
-                0x08002050      0x240 ..\obj\os_dbg.o
-                0x08002050                OS_Dbg_Init
+                0x0800206c      0x240 ..\obj\os_dbg.o
+                0x0800206c                OS_Dbg_Init
  .text.OSSemCreate
-                0x08002290       0x8c ..\obj\os_sem.o
-                0x08002290                OSSemCreate
+                0x080022ac       0x8c ..\obj\os_sem.o
+                0x080022ac                OSSemCreate
  .text.OSSemPend
-                0x0800231c      0x1cc ..\obj\os_sem.o
-                0x0800231c                OSSemPend
+                0x08002338      0x1cc ..\obj\os_sem.o
+                0x08002338                OSSemPend
  .text.OSSemPost
-                0x080024e8       0x88 ..\obj\os_sem.o
-                0x080024e8                OSSemPost
+                0x08002504       0x88 ..\obj\os_sem.o
+                0x08002504                OSSemPost
  .text.OS_SemDbgListAdd
-                0x08002570       0x4c ..\obj\os_sem.o
-                0x08002570                OS_SemDbgListAdd
+                0x0800258c       0x4c ..\obj\os_sem.o
+                0x0800258c                OS_SemDbgListAdd
  .text.OS_SemInit
-                0x080025bc       0x2c ..\obj\os_sem.o
-                0x080025bc                OS_SemInit
+                0x080025d8       0x2c ..\obj\os_sem.o
+                0x080025d8                OS_SemInit
  .text.OS_SemPost
-                0x080025e8       0xe0 ..\obj\os_sem.o
-                0x080025e8                OS_SemPost
+                0x08002604       0xe0 ..\obj\os_sem.o
+                0x08002604                OS_SemPost
  .text.OS_PrioInit
-                0x080026c8       0x30 ..\obj\os_prio.o
-                0x080026c8                OS_PrioInit
+                0x080026e4       0x30 ..\obj\os_prio.o
+                0x080026e4                OS_PrioInit
  .text.OS_PrioGetHighest
-                0x080026f8       0x48 ..\obj\os_prio.o
-                0x080026f8                OS_PrioGetHighest
+                0x08002714       0x48 ..\obj\os_prio.o
+                0x08002714                OS_PrioGetHighest
  .text.OS_PrioInsert
-                0x08002740       0x4c ..\obj\os_prio.o
-                0x08002740                OS_PrioInsert
+                0x0800275c       0x4c ..\obj\os_prio.o
+                0x0800275c                OS_PrioInsert
  .text.OS_PrioRemove
-                0x0800278c       0x50 ..\obj\os_prio.o
-                0x0800278c                OS_PrioRemove
- .text.OSInit   0x080027dc      0x1b0 ..\obj\os_core.o
-                0x080027dc                OSInit
+                0x080027a8       0x50 ..\obj\os_prio.o
+                0x080027a8                OS_PrioRemove
+ .text.OSInit   0x080027f8      0x1b0 ..\obj\os_core.o
+                0x080027f8                OSInit
  .text.OSIntEnter
-                0x0800298c       0x34 ..\obj\os_core.o
-                0x0800298c                OSIntEnter
+                0x080029a8       0x34 ..\obj\os_core.o
+                0x080029a8                OSIntEnter
  .text.OSIntExit
-                0x080029c0       0xd8 ..\obj\os_core.o
-                0x080029c0                OSIntExit
- .text.OSSched  0x08002a98       0xa0 ..\obj\os_core.o
-                0x08002a98                OSSched
+                0x080029dc       0xd8 ..\obj\os_core.o
+                0x080029dc                OSIntExit
+ .text.OSSched  0x08002ab4       0xa0 ..\obj\os_core.o
+                0x08002ab4                OSSched
  .text.OSSchedLock
-                0x08002b38       0x74 ..\obj\os_core.o
-                0x08002b38                OSSchedLock
+                0x08002b54       0x74 ..\obj\os_core.o
+                0x08002b54                OSSchedLock
  .text.OSSchedUnlock
-                0x08002bac       0x90 ..\obj\os_core.o
-                0x08002bac                OSSchedUnlock
- .text.OSStart  0x08002c3c       0x80 ..\obj\os_core.o
-                0x08002c3c                OSStart
+                0x08002bc8       0x90 ..\obj\os_core.o
+                0x08002bc8                OSSchedUnlock
+ .text.OSStart  0x08002c58       0x80 ..\obj\os_core.o
+                0x08002c58                OSStart
  .text.OS_IdleTask
-                0x08002cbc       0x3c ..\obj\os_core.o
-                0x08002cbc                OS_IdleTask
+                0x08002cd8       0x3c ..\obj\os_core.o
+                0x08002cd8                OS_IdleTask
  .text.OS_IdleTaskInit
-                0x08002cf8       0x68 ..\obj\os_core.o
-                0x08002cf8                OS_IdleTaskInit
- .text.OS_Pend  0x08002d60       0x80 ..\obj\os_core.o
-                0x08002d60                OS_Pend
+                0x08002d14       0x68 ..\obj\os_core.o
+                0x08002d14                OS_IdleTaskInit
+ .text.OS_Pend  0x08002d7c       0x80 ..\obj\os_core.o
+                0x08002d7c                OS_Pend
  .text.OS_PendDataInit
-                0x08002de0       0x68 ..\obj\os_core.o
-                0x08002de0                OS_PendDataInit
+                0x08002dfc       0x68 ..\obj\os_core.o
+                0x08002dfc                OS_PendDataInit
  .text.OS_PendDbgNameAdd
-                0x08002e48       0x7c ..\obj\os_core.o
-                0x08002e48                OS_PendDbgNameAdd
+                0x08002e64       0x7c ..\obj\os_core.o
+                0x08002e64                OS_PendDbgNameAdd
  .text.OS_PendDbgNameRemove
-                0x08002ec4       0x48 ..\obj\os_core.o
-                0x08002ec4                OS_PendDbgNameRemove
+                0x08002ee0       0x48 ..\obj\os_core.o
+                0x08002ee0                OS_PendDbgNameRemove
  .text.OS_PendListInit
-                0x08002f0c       0x24 ..\obj\os_core.o
-                0x08002f0c                OS_PendListInit
+                0x08002f28       0x24 ..\obj\os_core.o
+                0x08002f28                OS_PendListInit
  .text.OS_PendListInsertPrio
-                0x08002f30       0xe4 ..\obj\os_core.o
-                0x08002f30                OS_PendListInsertPrio
+                0x08002f4c       0xe4 ..\obj\os_core.o
+                0x08002f4c                OS_PendListInsertPrio
  .text.OS_PendListRemove
-                0x08003014       0x50 ..\obj\os_core.o
-                0x08003014                OS_PendListRemove
+                0x08003030       0x50 ..\obj\os_core.o
+                0x08003030                OS_PendListRemove
  .text.OS_PendListRemove1
-                0x08003064       0x94 ..\obj\os_core.o
-                0x08003064                OS_PendListRemove1
- .text.OS_Post  0x080030f8      0x110 ..\obj\os_core.o
-                0x080030f8                OS_Post
+                0x08003080       0x94 ..\obj\os_core.o
+                0x08003080                OS_PendListRemove1
+ .text.OS_Post  0x08003114      0x110 ..\obj\os_core.o
+                0x08003114                OS_Post
  .text.OS_Post1
-                0x08003208       0x5c ..\obj\os_core.o
-                0x08003208                OS_Post1
+                0x08003224       0x5c ..\obj\os_core.o
+                0x08003224                OS_Post1
  .text.OS_RdyListInit
-                0x08003264       0x48 ..\obj\os_core.o
-                0x08003264                OS_RdyListInit
+                0x08003280       0x48 ..\obj\os_core.o
+                0x08003280                OS_RdyListInit
  .text.OS_RdyListInsert
-                0x080032ac       0x3c ..\obj\os_core.o
-                0x080032ac                OS_RdyListInsert
+                0x080032c8       0x3c ..\obj\os_core.o
+                0x080032c8                OS_RdyListInsert
  .text.OS_RdyListInsertHead
-                0x080032e8       0x80 ..\obj\os_core.o
-                0x080032e8                OS_RdyListInsertHead
+                0x08003304       0x80 ..\obj\os_core.o
+                0x08003304                OS_RdyListInsertHead
  .text.OS_RdyListInsertTail
-                0x08003368       0x80 ..\obj\os_core.o
-                0x08003368                OS_RdyListInsertTail
+                0x08003384       0x80 ..\obj\os_core.o
+                0x08003384                OS_RdyListInsertTail
  .text.OS_RdyListRemove
-                0x080033e8       0xac ..\obj\os_core.o
-                0x080033e8                OS_RdyListRemove
+                0x08003404       0xac ..\obj\os_core.o
+                0x08003404                OS_RdyListRemove
  .text.OS_TaskBlock
-                0x08003494       0x4c ..\obj\os_core.o
-                0x08003494                OS_TaskBlock
+                0x080034b0       0x4c ..\obj\os_core.o
+                0x080034b0                OS_TaskBlock
  .text.OS_TaskRdy
-                0x080034e0       0x28 ..\obj\os_core.o
-                0x080034e0                OS_TaskRdy
+                0x080034fc       0x28 ..\obj\os_core.o
+                0x080034fc                OS_TaskRdy
  .text.OSStatReset
-                0x08003508      0x11c ..\obj\os_stat.o
-                0x08003508                OSStatReset
+                0x08003524      0x11c ..\obj\os_stat.o
+                0x08003524                OSStatReset
  .text.OSStatTaskCPUUsageInit
-                0x08003624       0xfc ..\obj\os_stat.o
-                0x08003624                OSStatTaskCPUUsageInit
+                0x08003640       0xfc ..\obj\os_stat.o
+                0x08003640                OSStatTaskCPUUsageInit
  .text.OS_StatTask
-                0x08003720      0x318 ..\obj\os_stat.o
-                0x08003720                OS_StatTask
+                0x0800373c      0x318 ..\obj\os_stat.o
+                0x0800373c                OS_StatTask
  .text.OS_StatTaskInit
-                0x08003a38       0xd4 ..\obj\os_stat.o
-                0x08003a38                OS_StatTaskInit
+                0x08003a54       0xd4 ..\obj\os_stat.o
+                0x08003a54                OS_StatTaskInit
  .text.OS_MemInit
-                0x08003b0c       0x2c ..\obj\os_mem.o
-                0x08003b0c                OS_MemInit
+                0x08003b28       0x2c ..\obj\os_mem.o
+                0x08003b28                OS_MemInit
  .text.BSP_PeriphEn
-                0x08003b38      0x2f0 ..\obj\bsp_periph.o
-                0x08003b38                BSP_PeriphEn
+                0x08003b54      0x2f0 ..\obj\bsp_periph.o
+                0x08003b54                BSP_PeriphEn
  .text.GPIO_Init
-                0x08003e28      0x11c ..\obj\stm32f4xx_gpio.o
-                0x08003e28                GPIO_Init
+                0x08003e44      0x11c ..\obj\stm32f4xx_gpio.o
+                0x08003e44                GPIO_Init
  .text.GPIO_ReadInputDataBit
-                0x08003f44       0x34 ..\obj\stm32f4xx_gpio.o
-                0x08003f44                GPIO_ReadInputDataBit
+                0x08003f60       0x34 ..\obj\stm32f4xx_gpio.o
+                0x08003f60                GPIO_ReadInputDataBit
  .text.GPIO_SetBits
-                0x08003f78       0x1c ..\obj\stm32f4xx_gpio.o
-                0x08003f78                GPIO_SetBits
- .text.GPIO_ResetBits
                 0x08003f94       0x1c ..\obj\stm32f4xx_gpio.o
-                0x08003f94                GPIO_ResetBits
+                0x08003f94                GPIO_SetBits
+ .text.GPIO_ResetBits
+                0x08003fb0       0x1c ..\obj\stm32f4xx_gpio.o
+                0x08003fb0                GPIO_ResetBits
  .text.FLASH_SetLatency
-                0x08003fb0       0x20 ..\obj\stm32f4xx_flash.o
-                0x08003fb0                FLASH_SetLatency
+                0x08003fcc       0x20 ..\obj\stm32f4xx_flash.o
+                0x08003fcc                FLASH_SetLatency
  .text.FLASH_PrefetchBufferCmd
-                0x08003fd0       0x38 ..\obj\stm32f4xx_flash.o
-                0x08003fd0                FLASH_PrefetchBufferCmd
+                0x08003fec       0x38 ..\obj\stm32f4xx_flash.o
+                0x08003fec                FLASH_PrefetchBufferCmd
  .text.Math_Init
-                0x08004008        0xc ..\obj\lib_math.o
-                0x08004008                Math_Init
+                0x08004024        0xc ..\obj\lib_math.o
+                0x08004024                Math_Init
  .text.Math_RandSetSeed
-                0x08004014       0x28 ..\obj\lib_math.o
-                0x08004014                Math_RandSetSeed
+                0x08004030       0x28 ..\obj\lib_math.o
+                0x08004030                Math_RandSetSeed
  .text.SystemInit
-                0x0800403c       0x68 ..\obj\system_stm32f4xx.o
-                0x0800403c                SystemInit
+                0x08004058       0x68 ..\obj\system_stm32f4xx.o
+                0x08004058                SystemInit
  .text.SetSysClock
-                0x080040a4      0x128 ..\obj\system_stm32f4xx.o
+                0x080040c0      0x128 ..\obj\system_stm32f4xx.o
  .text.OSCfg_Init
-                0x080041cc        0xc ..\obj\os_cfg_app.o
-                0x080041cc                OSCfg_Init
+                0x080041e8        0xc ..\obj\os_cfg_app.o
+                0x080041e8                OSCfg_Init
  .text.OS_QInit
-                0x080041d8       0x2c ..\obj\os_q.o
-                0x080041d8                OS_QInit
+                0x080041f4       0x2c ..\obj\os_q.o
+                0x080041f4                OS_QInit
  .text.OSTaskCreate
-                0x08004204      0x1f8 ..\obj\os_task.o
-                0x08004204                OSTaskCreate
+                0x08004220      0x1f8 ..\obj\os_task.o
+                0x08004220                OSTaskCreate
  .text.OSTaskDel
-                0x080043fc      0x13c ..\obj\os_task.o
-                0x080043fc                OSTaskDel
+                0x08004418      0x13c ..\obj\os_task.o
+                0x08004418                OSTaskDel
  .text.OSTaskResume
-                0x08004538       0x64 ..\obj\os_task.o
-                0x08004538                OSTaskResume
+                0x08004554       0x64 ..\obj\os_task.o
+                0x08004554                OSTaskResume
  .text.OSTaskSemPend
-                0x0800459c      0x1e0 ..\obj\os_task.o
-                0x0800459c                OSTaskSemPend
+                0x080045b8      0x1e0 ..\obj\os_task.o
+                0x080045b8                OSTaskSemPend
  .text.OSTaskSemPost
-                0x0800477c       0x48 ..\obj\os_task.o
-                0x0800477c                OSTaskSemPost
+                0x08004798       0x48 ..\obj\os_task.o
+                0x08004798                OSTaskSemPost
  .text.OSTaskStkChk
-                0x080047c4       0xf0 ..\obj\os_task.o
-                0x080047c4                OSTaskStkChk
+                0x080047e0       0xf0 ..\obj\os_task.o
+                0x080047e0                OSTaskStkChk
  .text.OSTaskSuspend
-                0x080048b4       0x44 ..\obj\os_task.o
-                0x080048b4                OSTaskSuspend
+                0x080048d0       0x44 ..\obj\os_task.o
+                0x080048d0                OSTaskSuspend
  .text.OS_TaskDbgListAdd
-                0x080048f8       0x4c ..\obj\os_task.o
-                0x080048f8                OS_TaskDbgListAdd
+                0x08004914       0x4c ..\obj\os_task.o
+                0x08004914                OS_TaskDbgListAdd
  .text.OS_TaskDbgListRemove
-                0x08004944       0x84 ..\obj\os_task.o
-                0x08004944                OS_TaskDbgListRemove
+                0x08004960       0x84 ..\obj\os_task.o
+                0x08004960                OS_TaskDbgListRemove
  .text.OS_TaskInit
-                0x080049c8       0x38 ..\obj\os_task.o
-                0x080049c8                OS_TaskInit
+                0x080049e4       0x38 ..\obj\os_task.o
+                0x080049e4                OS_TaskInit
  .text.OS_TaskInitTCB
-                0x08004a00      0x198 ..\obj\os_task.o
-                0x08004a00                OS_TaskInitTCB
+                0x08004a1c      0x198 ..\obj\os_task.o
+                0x08004a1c                OS_TaskInitTCB
  .text.OS_TaskResume
-                0x08004b98      0x124 ..\obj\os_task.o
-                0x08004b98                OS_TaskResume
+                0x08004bb4      0x124 ..\obj\os_task.o
+                0x08004bb4                OS_TaskResume
  .text.OS_TaskReturn
-                0x08004cbc       0x24 ..\obj\os_task.o
-                0x08004cbc                OS_TaskReturn
+                0x08004cd8       0x24 ..\obj\os_task.o
+                0x08004cd8                OS_TaskReturn
  .text.OS_TaskSemPost
-                0x08004ce0      0x128 ..\obj\os_task.o
-                0x08004ce0                OS_TaskSemPost
+                0x08004cfc      0x128 ..\obj\os_task.o
+                0x08004cfc                OS_TaskSemPost
  .text.OS_TaskSuspend
-                0x08004e08      0x118 ..\obj\os_task.o
-                0x08004e08                OS_TaskSuspend
+                0x08004e24      0x118 ..\obj\os_task.o
+                0x08004e24                OS_TaskSuspend
  .text.Reset_Handler
-                0x08004f20       0x50 ..\obj\cstartup.o
-                0x08004f20                Reset_Handler
+                0x08004f3c       0x50 ..\obj\cstartup.o
+                0x08004f3c                Reset_Handler
  .text.App_NMI_ISR
-                0x08004f70        0x4 ..\obj\cstartup.o
+                0x08004f8c        0x4 ..\obj\cstartup.o
  .text.App_Fault_ISR
-                0x08004f74        0x4 ..\obj\cstartup.o
+                0x08004f90        0x4 ..\obj\cstartup.o
  .text.App_MemFault_ISR
-                0x08004f78        0x4 ..\obj\cstartup.o
+                0x08004f94        0x4 ..\obj\cstartup.o
  .text.App_BusFault_ISR
-                0x08004f7c        0x4 ..\obj\cstartup.o
+                0x08004f98        0x4 ..\obj\cstartup.o
  .text.App_UsageFault_ISR
-                0x08004f80        0x4 ..\obj\cstartup.o
+                0x08004f9c        0x4 ..\obj\cstartup.o
  .text.App_Spurious_ISR
-                0x08004f84        0x4 ..\obj\cstartup.o
+                0x08004fa0        0x4 ..\obj\cstartup.o
  .text.OS_MutexInit
-                0x08004f88       0x2c ..\obj\os_mutex.o
-                0x08004f88                OS_MutexInit
+                0x08004fa4       0x2c ..\obj\os_mutex.o
+                0x08004fa4                OS_MutexInit
  .text.BSP_Init
-                0x08004fb4       0x7c ..\obj\bsp.o
-                0x08004fb4                BSP_Init
+                0x08004fd0       0x7c ..\obj\bsp.o
+                0x08004fd0                BSP_Init
  .text.BSP_CPU_ClkFreq
-                0x08005030       0x18 ..\obj\bsp.o
-                0x08005030                BSP_CPU_ClkFreq
+                0x0800504c       0x18 ..\obj\bsp.o
+                0x0800504c                BSP_CPU_ClkFreq
  .text.BSP_Tick_Init
-                0x08005048       0x28 ..\obj\bsp.o
-                0x08005048                BSP_Tick_Init
+                0x08005064       0x28 ..\obj\bsp.o
+                0x08005064                BSP_Tick_Init
  .text.BSP_LED_Init
-                0x08005070       0x68 ..\obj\bsp.o
+                0x0800508c       0x68 ..\obj\bsp.o
  .text.CPU_TS_TmrInit
-                0x080050d8       0x44 ..\obj\bsp.o
-                0x080050d8                CPU_TS_TmrInit
+                0x080050f4       0x44 ..\obj\bsp.o
+                0x080050f4                CPU_TS_TmrInit
  .text.CPU_TS_TmrRd
-                0x0800511c       0x20 ..\obj\bsp.o
-                0x0800511c                CPU_TS_TmrRd
+                0x08005138       0x20 ..\obj\bsp.o
+                0x08005138                CPU_TS_TmrRd
  .text.OS_TmrInit
-                0x0800513c      0x140 ..\obj\os_tmr.o
-                0x0800513c                OS_TmrInit
+                0x08005158      0x140 ..\obj\os_tmr.o
+                0x08005158                OS_TmrInit
  .text.OS_TmrLink
-                0x0800527c      0x168 ..\obj\os_tmr.o
-                0x0800527c                OS_TmrLink
+                0x08005298      0x168 ..\obj\os_tmr.o
+                0x08005298                OS_TmrLink
  .text.OS_TmrResetPeak
-                0x080053e4       0x40 ..\obj\os_tmr.o
-                0x080053e4                OS_TmrResetPeak
+                0x08005400       0x40 ..\obj\os_tmr.o
+                0x08005400                OS_TmrResetPeak
  .text.OS_TmrUnlink
-                0x08005424       0x9c ..\obj\os_tmr.o
-                0x08005424                OS_TmrUnlink
+                0x08005440       0x9c ..\obj\os_tmr.o
+                0x08005440                OS_TmrUnlink
  .text.OS_TmrTask
-                0x080054c0      0x104 ..\obj\os_tmr.o
-                0x080054c0                OS_TmrTask
+                0x080054dc      0x104 ..\obj\os_tmr.o
+                0x080054dc                OS_TmrTask
  .text.__libc_init_array
-                0x080055c4       0x48 ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-init.o)
-                0x080055c4                __libc_init_array
+                0x080055e0       0x48 ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-init.o)
+                0x080055e0                __libc_init_array
  .text.startup.register_fini
-                0x0800560c       0x14 ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-__call_atexit.o)
- .text.atexit   0x08005620        0xc ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-atexit.o)
-                0x08005620                atexit
+                0x08005628       0x14 ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-__call_atexit.o)
+ .text.atexit   0x0800563c        0xc ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-atexit.o)
+                0x0800563c                atexit
  .text.__libc_fini_array
-                0x0800562c       0x2c ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-fini.o)
-                0x0800562c                __libc_fini_array
+                0x08005648       0x2c ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-fini.o)
+                0x08005648                __libc_fini_array
  .text.__register_exitproc
-                0x08005658       0xac ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-__atexit.o)
-                0x08005658                __register_exitproc
+                0x08005674       0xac ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-__atexit.o)
+                0x08005674                __register_exitproc
  *(.init)
- .init          0x08005704        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crti.o
-                0x08005704                _init
- .init          0x08005708        0x8 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
+ .init          0x08005720        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crti.o
+                0x08005720                _init
+ .init          0x08005724        0x8 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
  *(.fini)
- .fini          0x08005710        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crti.o
-                0x08005710                _fini
- .fini          0x08005714        0x8 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
+ .fini          0x0800572c        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crti.o
+                0x0800572c                _fini
+ .fini          0x08005730        0x8 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -3652,167 +3652,167 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x0800571c       0x14 ..\obj\os_tick.o
- .rodata        0x08005730       0xcc ..\obj\main.o
- .rodata        0x080057fc      0x16c ..\obj\os_dbg.o
-                0x080057fc                OSDbg_DbgEn
-                0x080057fd                OSDbg_ArgChkEn
-                0x080057fe                OSDbg_AppHooksEn
-                0x08005800                OSDbg_EndiannessTest
-                0x08005804                OSDbg_CalledFromISRChkEn
-                0x08005805                OSDbg_FlagEn
-                0x08005808                OSDbg_FlagGrp
-                0x08005830                OSDbg_FlagDelEn
-                0x08005831                OSDbg_FlagModeClrEn
-                0x08005832                OSDbg_FlagPendAbortEn
-                0x08005834                OSDbg_FlagGrpSize
-                0x08005836                OSDbg_FlagWidth
-                0x08005838                OSDbg_IntQ
-                0x0800583a                OSDbg_ISRPostDeferredEn
-                0x0800583c                OSDbg_Mem
-                0x0800585c                OSDbg_MemEn
-                0x0800585e                OSDbg_MemSize
-                0x08005860                OSDbg_MsgEn
-                0x08005862                OSDbg_MsgSize
-                0x08005864                OSDbg_MsgPoolSize
-                0x08005866                OSDbg_MsgQSize
-                0x08005868                OSDbg_Mutex
-                0x08005894                OSDbg_MutexEn
-                0x08005895                OSDbg_MutexDelEn
-                0x08005896                OSDbg_MutexPendAbortEn
-                0x08005898                OSDbg_MutexSize
-                0x0800589a                OSDbg_ObjTypeChkEn
-                0x0800589b                OSDbg_PendMultiEn
-                0x0800589c                OSDbg_PendDataSize
-                0x0800589e                OSDbg_PendListSize
-                0x080058a0                OSDbg_PendObjSize
-                0x080058a2                OSDbg_PrioMax
-                0x080058a4                OSDbg_PrioTblSize
-                0x080058a6                OSDbg_PtrSize
-                0x080058a8                OSDbg_Q
-                0x080058d8                OSDbg_QEn
-                0x080058d9                OSDbg_QDelEn
-                0x080058da                OSDbg_QFlushEn
-                0x080058db                OSDbg_QPendAbortEn
-                0x080058dc                OSDbg_QSize
-                0x080058de                OSDbg_SchedRoundRobinEn
-                0x080058e0                OSDbg_Sem
-                0x08005908                OSDbg_SemEn
-                0x08005909                OSDbg_SemDelEn
-                0x0800590a                OSDbg_SemPendAbortEn
-                0x0800590b                OSDbg_SemSetEn
-                0x0800590c                OSDbg_SemSize
-                0x0800590e                OSDbg_RdyList
-                0x08005910                OSDbg_RdyListSize
-                0x08005914                OSDbg_StkWidth
-                0x08005915                OSDbg_StatTaskEn
-                0x08005916                OSDbg_StatTaskStkChkEn
-                0x08005917                OSDbg_TaskChangePrioEn
-                0x08005918                OSDbg_TaskDelEn
-                0x08005919                OSDbg_TaskQEn
-                0x0800591a                OSDbg_TaskQPendAbortEn
-                0x0800591b                OSDbg_TaskProfileEn
-                0x0800591c                OSDbg_TaskRegTblSize
-                0x0800591e                OSDbg_TaskSemPendAbortEn
-                0x0800591f                OSDbg_TaskSuspendEn
-                0x08005920                OSDbg_TCBSize
-                0x08005922                OSDbg_TickSpokeSize
-                0x08005924                OSDbg_TimeDlyHMSMEn
-                0x08005925                OSDbg_TimeDlyResumeEn
-                0x08005926                OSDbg_TLS_TblSize
-                0x08005928                OSDbg_Tmr
-                0x0800595c                OSDbg_TmrEn
-                0x0800595d                OSDbg_TmrDelEn
-                0x0800595e                OSDbg_TmrSize
-                0x08005960                OSDbg_TmrSpokeSize
-                0x08005962                OSDbg_VersionNbr
-                0x08005964                OSDbg_DataSize
- .rodata        0x08005968        0xc ..\obj\os_sem.o
- .rodata        0x08005974       0x2c ..\obj\os_core.o
- .rodata        0x080059a0       0x14 ..\obj\os_stat.o
- .rodata        0x080059b4       0xa4 ..\obj\os_cfg_app.o
-                0x080059b4                OSCfg_IdleTaskStkBasePtr
-                0x080059b8                OSCfg_IdleTaskStkLimit
-                0x080059bc                OSCfg_IdleTaskStkSize
-                0x080059c0                OSCfg_IdleTaskStkSizeRAM
-                0x080059c4                OSCfg_IntQBasePtr
-                0x080059c8                OSCfg_IntQSize
-                0x080059cc                OSCfg_IntQSizeRAM
-                0x080059d0                OSCfg_IntQTaskStkBasePtr
-                0x080059d4                OSCfg_IntQTaskStkLimit
-                0x080059d8                OSCfg_IntQTaskStkSize
-                0x080059dc                OSCfg_IntQTaskStkSizeRAM
-                0x080059e0                OSCfg_ISRStkBasePtr
-                0x080059e4                OSCfg_ISRStkSize
-                0x080059e8                OSCfg_ISRStkSizeRAM
-                0x080059ec                OSCfg_MsgPoolSize
-                0x080059f0                OSCfg_MsgPoolSizeRAM
-                0x080059f4                OSCfg_MsgPoolBasePtr
-                0x080059f8                OSCfg_StatTaskPrio
-                0x080059fc                OSCfg_StatTaskRate_Hz
-                0x08005a00                OSCfg_StatTaskStkBasePtr
-                0x08005a04                OSCfg_StatTaskStkLimit
-                0x08005a08                OSCfg_StatTaskStkSize
-                0x08005a0c                OSCfg_StatTaskStkSizeRAM
-                0x08005a10                OSCfg_StkSizeMin
-                0x08005a14                OSCfg_TickRate_Hz
-                0x08005a18                OSCfg_TickTaskPrio
-                0x08005a1c                OSCfg_TickTaskStkBasePtr
-                0x08005a20                OSCfg_TickTaskStkLimit
-                0x08005a24                OSCfg_TickTaskStkSize
-                0x08005a28                OSCfg_TickTaskStkSizeRAM
-                0x08005a2c                OSCfg_TickWheelSize
-                0x08005a30                OSCfg_TickWheelSizeRAM
-                0x08005a34                OSCfg_TmrTaskPrio
-                0x08005a38                OSCfg_TmrTaskRate_Hz
-                0x08005a3c                OSCfg_TmrTaskStkBasePtr
-                0x08005a40                OSCfg_TmrTaskStkLimit
-                0x08005a44                OSCfg_TmrTaskStkSize
-                0x08005a48                OSCfg_TmrTaskStkSizeRAM
-                0x08005a4c                OSCfg_TmrWheelSize
-                0x08005a50                OSCfg_TmrWheelSizeRAM
-                0x08005a54                OSCfg_DataSizeRAM
- .rodata        0x08005a58        0xc ..\obj\os_task.o
- .rodata        0x08005a64       0x20 ..\obj\os_tmr.o
+ .rodata        0x08005738       0x14 ..\obj\os_tick.o
+ .rodata        0x0800574c       0xcc ..\obj\main.o
+ .rodata        0x08005818      0x16c ..\obj\os_dbg.o
+                0x08005818                OSDbg_DbgEn
+                0x08005819                OSDbg_ArgChkEn
+                0x0800581a                OSDbg_AppHooksEn
+                0x0800581c                OSDbg_EndiannessTest
+                0x08005820                OSDbg_CalledFromISRChkEn
+                0x08005821                OSDbg_FlagEn
+                0x08005824                OSDbg_FlagGrp
+                0x0800584c                OSDbg_FlagDelEn
+                0x0800584d                OSDbg_FlagModeClrEn
+                0x0800584e                OSDbg_FlagPendAbortEn
+                0x08005850                OSDbg_FlagGrpSize
+                0x08005852                OSDbg_FlagWidth
+                0x08005854                OSDbg_IntQ
+                0x08005856                OSDbg_ISRPostDeferredEn
+                0x08005858                OSDbg_Mem
+                0x08005878                OSDbg_MemEn
+                0x0800587a                OSDbg_MemSize
+                0x0800587c                OSDbg_MsgEn
+                0x0800587e                OSDbg_MsgSize
+                0x08005880                OSDbg_MsgPoolSize
+                0x08005882                OSDbg_MsgQSize
+                0x08005884                OSDbg_Mutex
+                0x080058b0                OSDbg_MutexEn
+                0x080058b1                OSDbg_MutexDelEn
+                0x080058b2                OSDbg_MutexPendAbortEn
+                0x080058b4                OSDbg_MutexSize
+                0x080058b6                OSDbg_ObjTypeChkEn
+                0x080058b7                OSDbg_PendMultiEn
+                0x080058b8                OSDbg_PendDataSize
+                0x080058ba                OSDbg_PendListSize
+                0x080058bc                OSDbg_PendObjSize
+                0x080058be                OSDbg_PrioMax
+                0x080058c0                OSDbg_PrioTblSize
+                0x080058c2                OSDbg_PtrSize
+                0x080058c4                OSDbg_Q
+                0x080058f4                OSDbg_QEn
+                0x080058f5                OSDbg_QDelEn
+                0x080058f6                OSDbg_QFlushEn
+                0x080058f7                OSDbg_QPendAbortEn
+                0x080058f8                OSDbg_QSize
+                0x080058fa                OSDbg_SchedRoundRobinEn
+                0x080058fc                OSDbg_Sem
+                0x08005924                OSDbg_SemEn
+                0x08005925                OSDbg_SemDelEn
+                0x08005926                OSDbg_SemPendAbortEn
+                0x08005927                OSDbg_SemSetEn
+                0x08005928                OSDbg_SemSize
+                0x0800592a                OSDbg_RdyList
+                0x0800592c                OSDbg_RdyListSize
+                0x08005930                OSDbg_StkWidth
+                0x08005931                OSDbg_StatTaskEn
+                0x08005932                OSDbg_StatTaskStkChkEn
+                0x08005933                OSDbg_TaskChangePrioEn
+                0x08005934                OSDbg_TaskDelEn
+                0x08005935                OSDbg_TaskQEn
+                0x08005936                OSDbg_TaskQPendAbortEn
+                0x08005937                OSDbg_TaskProfileEn
+                0x08005938                OSDbg_TaskRegTblSize
+                0x0800593a                OSDbg_TaskSemPendAbortEn
+                0x0800593b                OSDbg_TaskSuspendEn
+                0x0800593c                OSDbg_TCBSize
+                0x0800593e                OSDbg_TickSpokeSize
+                0x08005940                OSDbg_TimeDlyHMSMEn
+                0x08005941                OSDbg_TimeDlyResumeEn
+                0x08005942                OSDbg_TLS_TblSize
+                0x08005944                OSDbg_Tmr
+                0x08005978                OSDbg_TmrEn
+                0x08005979                OSDbg_TmrDelEn
+                0x0800597a                OSDbg_TmrSize
+                0x0800597c                OSDbg_TmrSpokeSize
+                0x0800597e                OSDbg_VersionNbr
+                0x08005980                OSDbg_DataSize
+ .rodata        0x08005984        0xc ..\obj\os_sem.o
+ .rodata        0x08005990       0x2c ..\obj\os_core.o
+ .rodata        0x080059bc       0x14 ..\obj\os_stat.o
+ .rodata        0x080059d0       0xa4 ..\obj\os_cfg_app.o
+                0x080059d0                OSCfg_IdleTaskStkBasePtr
+                0x080059d4                OSCfg_IdleTaskStkLimit
+                0x080059d8                OSCfg_IdleTaskStkSize
+                0x080059dc                OSCfg_IdleTaskStkSizeRAM
+                0x080059e0                OSCfg_IntQBasePtr
+                0x080059e4                OSCfg_IntQSize
+                0x080059e8                OSCfg_IntQSizeRAM
+                0x080059ec                OSCfg_IntQTaskStkBasePtr
+                0x080059f0                OSCfg_IntQTaskStkLimit
+                0x080059f4                OSCfg_IntQTaskStkSize
+                0x080059f8                OSCfg_IntQTaskStkSizeRAM
+                0x080059fc                OSCfg_ISRStkBasePtr
+                0x08005a00                OSCfg_ISRStkSize
+                0x08005a04                OSCfg_ISRStkSizeRAM
+                0x08005a08                OSCfg_MsgPoolSize
+                0x08005a0c                OSCfg_MsgPoolSizeRAM
+                0x08005a10                OSCfg_MsgPoolBasePtr
+                0x08005a14                OSCfg_StatTaskPrio
+                0x08005a18                OSCfg_StatTaskRate_Hz
+                0x08005a1c                OSCfg_StatTaskStkBasePtr
+                0x08005a20                OSCfg_StatTaskStkLimit
+                0x08005a24                OSCfg_StatTaskStkSize
+                0x08005a28                OSCfg_StatTaskStkSizeRAM
+                0x08005a2c                OSCfg_StkSizeMin
+                0x08005a30                OSCfg_TickRate_Hz
+                0x08005a34                OSCfg_TickTaskPrio
+                0x08005a38                OSCfg_TickTaskStkBasePtr
+                0x08005a3c                OSCfg_TickTaskStkLimit
+                0x08005a40                OSCfg_TickTaskStkSize
+                0x08005a44                OSCfg_TickTaskStkSizeRAM
+                0x08005a48                OSCfg_TickWheelSize
+                0x08005a4c                OSCfg_TickWheelSizeRAM
+                0x08005a50                OSCfg_TmrTaskPrio
+                0x08005a54                OSCfg_TmrTaskRate_Hz
+                0x08005a58                OSCfg_TmrTaskStkBasePtr
+                0x08005a5c                OSCfg_TmrTaskStkLimit
+                0x08005a60                OSCfg_TmrTaskStkSize
+                0x08005a64                OSCfg_TmrTaskStkSizeRAM
+                0x08005a68                OSCfg_TmrWheelSize
+                0x08005a6c                OSCfg_TmrWheelSizeRAM
+                0x08005a70                OSCfg_DataSizeRAM
+ .rodata        0x08005a74        0xc ..\obj\os_task.o
+ .rodata        0x08005a80       0x20 ..\obj\os_tmr.o
  .rodata.str1.4
-                0x08005a84        0x4 ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-impure.o)
+                0x08005aa0        0x4 ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-impure.o)
  .rodata._global_impure_ptr
-                0x08005a88        0x4 ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-impure.o)
-                0x08005a88                _global_impure_ptr
+                0x08005aa4        0x4 ..\..\..\..\..\..\..\..\..\Program Files (x86)\GNU Tools ARM Embedded\4.6 2012q2\arm-none-eabi\lib\armv7e-m\fpu\libg.a(lib_a-impure.o)
+                0x08005aa4                _global_impure_ptr
  *(.eh_fram e*)
 
-.eh_frame       0x08005a8c        0x0
- .eh_frame      0x08005a8c        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
+.eh_frame       0x08005aa8        0x0
+ .eh_frame      0x08005aa8        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
 
-.glue_7         0x08005a8c        0x0
+.glue_7         0x08005aa8        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x08005a8c        0x0
+.glue_7t        0x08005aa8        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x08005a8c        0x0
+.vfp11_veneer   0x08005aa8        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x08005a8c        0x0
+.v4_bx          0x08005aa8        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x08005a8c        0x0
+.iplt           0x08005aa8        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
 
-.rel.dyn        0x08005a8c        0x0
+.rel.dyn        0x08005aa8        0x0
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08005a8c                __exidx_start = .
+                0x08005aa8                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08005a8c                __exidx_end = .
-                0x08005a8c                __etext = .
-                0x08005a8c                _sidata = __etext
+                0x08005aa8                __exidx_end = .
+                0x08005aa8                __etext = .
+                0x08005aa8                _sidata = __etext
 
-.data           0x20000000      0x448 load address 0x08005a8c
+.data           0x20000000      0x448 load address 0x08005aa8
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -3845,10 +3845,10 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm
                 0x20000448                __data_end__ = .
                 0x20000448                _edata = __data_end__
 
-.igot.plt       0x20000448        0x0 load address 0x08005ed4
+.igot.plt       0x20000448        0x0 load address 0x08005ef0
  .igot.plt      0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
 
-.bss            0x20000448     0x8dac load address 0x08005ed4
+.bss            0x20000448     0x8dac load address 0x08005ef0
                 0x20000448                . = ALIGN (0x4)
                 0x20000448                __bss_start__ = .
                 0x20000448                _sbss = __bss_start__
@@ -3960,7 +3960,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm
  *(.heap*)
                 0x200091f4                __HeapLimit = .
 
-.co_stack       0x200091f4        0x4 load address 0x0800ec80
+.co_stack       0x200091f4        0x4 load address 0x0800ec9c
                 0x200091f8                . = ALIGN (0x8)
  *fill*         0x200091f4        0x4 
  *(.co_stack .co_stack.*)
@@ -4177,7 +4177,7 @@ OUTPUT(Project.elf elf32-littlearm)
  .comment       0x00000000       0x71 ..\obj\bsp.o
  .comment       0x00000000       0x71 ..\obj\os_tmr.o
 
-.debug_line     0x00000000     0x6236
+.debug_line     0x00000000     0x6237
  .debug_line    0x00000000       0x9f ..\obj\cpu_a.o
  .debug_line    0x0000009f      0x237 ..\obj\os_time.o
  .debug_line    0x000002d6       0xd5 ..\obj\os_cpu_a.o
@@ -4187,29 +4187,29 @@ OUTPUT(Project.elf elf32-littlearm)
  .debug_line    0x00001416      0x2a8 ..\obj\cpu_core.o
  .debug_line    0x000016be      0x3a6 ..\obj\os_flag.o
  .debug_line    0x00001a64      0x28b ..\obj\os_tick.o
- .debug_line    0x00001cef      0x366 ..\obj\sorting.o
- .debug_line    0x00002055      0x10b ..\obj\os_var.o
- .debug_line    0x00002160      0x1f7 ..\obj\os_msg.o
- .debug_line    0x00002357      0x3a4 ..\obj\main.o
- .debug_line    0x000026fb      0x68e ..\obj\stm32f4xx_rcc.o
- .debug_line    0x00002d89      0x16f ..\obj\os_dbg.o
- .debug_line    0x00002ef8      0x301 ..\obj\os_sem.o
- .debug_line    0x000031f9      0x133 ..\obj\os_prio.o
- .debug_line    0x0000332c      0x5ea ..\obj\os_core.o
- .debug_line    0x00003916      0x23d ..\obj\os_stat.o
- .debug_line    0x00003b53      0x196 ..\obj\os_mem.o
- .debug_line    0x00003ce9      0x244 ..\obj\bsp_periph.o
- .debug_line    0x00003f2d      0x392 ..\obj\stm32f4xx_gpio.o
- .debug_line    0x000042bf      0x5c6 ..\obj\stm32f4xx_flash.o
- .debug_line    0x00004885      0x116 ..\obj\lib_math.o
- .debug_line    0x0000499b      0x284 ..\obj\system_stm32f4xx.o
- .debug_line    0x00004c1f      0x12e ..\obj\os_cfg_app.o
- .debug_line    0x00004d4d      0x2fd ..\obj\os_q.o
- .debug_line    0x0000504a      0x5f1 ..\obj\os_task.o
- .debug_line    0x0000563b      0x101 ..\obj\cstartup.o
- .debug_line    0x0000573c      0x2f6 ..\obj\os_mutex.o
- .debug_line    0x00005a32      0x44f ..\obj\bsp.o
- .debug_line    0x00005e81      0x3b5 ..\obj\os_tmr.o
+ .debug_line    0x00001cef      0x367 ..\obj\sorting.o
+ .debug_line    0x00002056      0x10b ..\obj\os_var.o
+ .debug_line    0x00002161      0x1f7 ..\obj\os_msg.o
+ .debug_line    0x00002358      0x3a4 ..\obj\main.o
+ .debug_line    0x000026fc      0x68e ..\obj\stm32f4xx_rcc.o
+ .debug_line    0x00002d8a      0x16f ..\obj\os_dbg.o
+ .debug_line    0x00002ef9      0x301 ..\obj\os_sem.o
+ .debug_line    0x000031fa      0x133 ..\obj\os_prio.o
+ .debug_line    0x0000332d      0x5ea ..\obj\os_core.o
+ .debug_line    0x00003917      0x23d ..\obj\os_stat.o
+ .debug_line    0x00003b54      0x196 ..\obj\os_mem.o
+ .debug_line    0x00003cea      0x244 ..\obj\bsp_periph.o
+ .debug_line    0x00003f2e      0x392 ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x000042c0      0x5c6 ..\obj\stm32f4xx_flash.o
+ .debug_line    0x00004886      0x116 ..\obj\lib_math.o
+ .debug_line    0x0000499c      0x284 ..\obj\system_stm32f4xx.o
+ .debug_line    0x00004c20      0x12e ..\obj\os_cfg_app.o
+ .debug_line    0x00004d4e      0x2fd ..\obj\os_q.o
+ .debug_line    0x0000504b      0x5f1 ..\obj\os_task.o
+ .debug_line    0x0000563c      0x101 ..\obj\cstartup.o
+ .debug_line    0x0000573d      0x2f6 ..\obj\os_mutex.o
+ .debug_line    0x00005a33      0x44f ..\obj\bsp.o
+ .debug_line    0x00005e82      0x3b5 ..\obj\os_tmr.o
 
 .debug_info     0x00000000    0x165c3
  .debug_info    0x00000000       0xb8 ..\obj\cpu_a.o
