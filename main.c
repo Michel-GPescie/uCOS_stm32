@@ -1,9 +1,13 @@
 #include  <app_cfg.h>
 #include  <includes.h>
+#include <sorting.h>
+#include <pinmap.h>
 
 #define BUTTON (GPIOA->IDR & 0x0001)
 #define BUTTON_STK_SIZE 16u
 #define BUTTON_TASK_PRIO 8u
+/* Semaphores ---------------------------------------------------------------------------*/
+OS_SEM sem0;
 
 /* Tasks' control blocks. ---------------------------------------------------------------*/
 
@@ -18,7 +22,7 @@ static	CPU_STK buttonSTK[BUTTON_STK_SIZE];
 /* Tasks. -------------------------------------------------------------------------------*/
 
 static  void  AppTaskStart          (void     *p_arg);
-static void buttonTask(void *p_arg);
+static void initPinmap();
 
 /* Main program. ------------------------------------------------------------------------*/
 
@@ -49,6 +53,11 @@ int main(void) {
     /* OS initialization. */
 
     OSInit(&oseError);
+
+    /* Semaphores */
+
+    OSSemCreate(&sem0, "semaphore tapis 0", 1, &err);
+
     /* Blink LED :D */
     OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,
                  (CPU_CHAR     *)"App Task Start",
@@ -79,19 +88,7 @@ int main(void) {
                  (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
                  (OS_ERR       *)&oseError);
                  */
-    OSTaskCreate((OS_TCB       *)&buttonTCB,
-                 (CPU_CHAR     *)"TI bouton",
-                 (OS_TASK_PTR   )buttonTask,
-                 (void         *)0,
-                 (OS_PRIO       )BUTTON_TASK_PRIO,
-                 (CPU_STK      *)&buttonSTK[0],
-                 (CPU_STK_SIZE  )buttonSTK[BUTTON_STK_SIZE / 10],
-                 (CPU_STK_SIZE  )BUTTON_STK_SIZE,
-                 (OS_MSG_QTY    )0,
-                 (OS_TICK       )0,
-                 (void         *)0,
-                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
-                 (OS_ERR       *)&oseError);
+
     /* tapis 0 */
     OSTaskCreate((OS_TCB       *)&tapisEntreeTCB,
                  (CPU_CHAR     *)"Tapis 0",
@@ -125,7 +122,7 @@ int main(void) {
                  (CPU_CHAR     *)"Tri",
                  (OS_TASK_PTR   )triTask,
                  (void         *)0,
-                 (OS_PRIO       )TRI_TASK_PRIO,
+                 (OS_PRIO       )TRI_PRIO,
                  (CPU_STK      *)&triSTK[0],
                  (CPU_STK_SIZE  )triSTK[TRI_STK_SIZE / 10],
                  (CPU_STK_SIZE  )TRI_STK_SIZE,
@@ -139,7 +136,7 @@ int main(void) {
                  (CPU_CHAR     *)"Tapis d'evacuation vers la gauche",
                  (OS_TASK_PTR   )evacGaucheTask,
                  (void         *)0,
-                 (OS_PRIO       )EVAC_GAUCHE_TASK_PRIO,
+                 (OS_PRIO       )EVAC_GAUCHE_PRIO,
                  (CPU_STK      *)&evacGaucheSTK[0],
                  (CPU_STK_SIZE  )evacGaucheSTK[EVAC_GAUCHE_STK_SIZE / 10],
                  (CPU_STK_SIZE  )EVAC_GAUCHE_STK_SIZE,
@@ -153,7 +150,7 @@ int main(void) {
                  (CPU_CHAR     *)"Tapis d'evacuation vers la droite",
                  (OS_TASK_PTR   )evacDroiteTask,
                  (void         *)0,
-                 (OS_PRIO       )EVAC_DROITE_TASK_PRIO,
+                 (OS_PRIO       )EVAC_DROITE_PRIO,
                  (CPU_STK      *)&evacDroiteSTK[0],
                  (CPU_STK_SIZE  )evacDroiteSTK[EVAC_DROITE_STK_SIZE / 10],
                  (CPU_STK_SIZE  )EVAC_DROITE_STK_SIZE,
@@ -211,16 +208,33 @@ static void AppTaskStart(void *p_arg) {
 
 #endif
 
-    while(DEF_TRUE) {
+/*    while(DEF_TRUE) {
         GPIOD->ODR ^= GPIO_Pin_15;
-
+*/
         /* Time delay. */
-        OSTimeDlyHMSM(0, 0, 0, 100, OS_OPT_TIME_HMSM_STRICT, &oseError);
-    }
+/*        OSTimeDlyHMSM(0, 0, 0, 100, OS_OPT_TIME_HMSM_STRICT, &oseError);
+    }*/
 }
 
-void buttonTask(void *p_arg){
+void initPinmap(){
+	GPIO_InitTypeDef GPIO_struct;
 
+	GPIO_struct.GPIO_Pin = IDO_0 | IDO_1 | IDO_2 | IDO_3 | IDO_4 | IDO_5 | IDO_6 | IDO_7;
+	GPIO_struct.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_struct.GPIO_OType = GPIO_OType_PP;
+	GPIO_struct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_struct.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_Init(IDO_SLOT1_PORT, &GPIO_struct);
+
+	GPIO_struct.GPIO_Pin = IDO_8 | IDO_9 | IDO_10 | IDO_11 | IDO_12 | IDO_13 | IDO_14 | IDO_15;
+	GPIO_Init(IDO_SLOT2_PORT, &GPIO_struct);
+
+	GPIO_struct.GPIO_Pin = IDI_0 | IDI_1 | IDI_2 | IDI_3 | IDI_4 | IDI_5 | IDI_6 | IDI_7;
+	GPIO_struct.GPIO_Mode = GPIO_Mode_OUT;
+	GPIO_Init(IDI_SLOT1_PORT, &GPIO_struct);
+
+	GPIO_struct.GPIO_Pin = IDI_8 | IDI_9 | IDI_10 | IDI_11 | IDI_12 | IDI_13 | IDI_14 | IDI_15;
+	GPIO_Init(IDI_SLOT2_PORT, &GPIO_struct);
 }
 
 #define USE_FULL_ASSERT
@@ -228,13 +242,13 @@ void buttonTask(void *p_arg){
 #ifdef USE_FULL_ASSERT
 void assert_failed(uint8_t* file, uint32_t line) {
 	/* Switch off all leds. */
-	GPIOD->BSRRH = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+/*	GPIOD->BSRRH = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
 
 	while(1) {
 		GPIOD->ODR ^= GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
-
+*/
 		/* Delay. */
-		for(uint32_t i = 0; i < 10000000; i++);
-	}
+/*		for(uint32_t i = 0; i < 10000000; i++);
+	}*/
 }
 #endif

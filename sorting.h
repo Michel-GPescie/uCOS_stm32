@@ -14,6 +14,9 @@
 #ifndef __SORTING_H__
 #define __SORTING_H__
 
+#include  <app_cfg.h>
+#include  <includes.h>
+
 /**	Chaque tache aura les elements suivants:
  *  #define:
  * 		* une dimension de stack
@@ -78,7 +81,7 @@ void rotorTask(void *p_arg);
 #define EVAC_GAUCHE_PRIO	10u
 
 OS_TCB evacGaucheTCB;
-CPU_STK evacGaucheSTK[rotor_STK_SIZE];
+CPU_STK evacGaucheSTK[EVAC_GAUCHE_STK_SIZE];
 
 void evacGaucheTask(void *p_arg);
 
@@ -89,7 +92,7 @@ void evacGaucheTask(void *p_arg);
 #define EVAC_DROITE_PRIO	10u
 
 OS_TCB evacDroiteTCB;
-CPU_STK evacDroiteSTK[TAPIS_ENTREE_STK_SIZE];
+CPU_STK evacDroiteSTK[EVAC_DROITE_STK_SIZE];
 
 void evacDroiteTask(void *p_arg);
 

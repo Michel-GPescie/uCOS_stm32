@@ -79,8 +79,8 @@
       <target file="stm32f4xx_cryp_des.o" lastModified="14b9d621272">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_des.c" lastModified="141301497f0"/>
       </target>
-      <target file="sorting.o" lastModified="14b9d6205e7">
-         <source file="..\..\..\sorting.c" lastModified="14b9d539e30"/>
+      <target file="sorting.o" lastModified="14ba71b4919">
+         <source file="..\..\..\sorting.c" lastModified="14ba719f72a"/>
       </target>
       <target file="os_msg.o" lastModified="14b9d6207c3">
          <source file="..\..\..\os\ucos\os\source\os_msg.c" lastModified="13c67f41920"/>
@@ -103,11 +103,11 @@
       <target file="stm32f4xx_rtc.o" lastModified="14b9d6227ad">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_rtc.c" lastModified="141301497f0"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="14b9d622b70">
-         <source file="..\..\..\drivers\hal\source\stm32f4xx_tim.c" lastModified="141301497f0"/>
-      </target>
       <target file="stm32f4xx_wwdg.o" lastModified="14b9d62042b">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_wwdg.c" lastModified="141301497f0"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="14b9d622b70">
+         <source file="..\..\..\drivers\hal\source\stm32f4xx_tim.c" lastModified="141301497f0"/>
       </target>
       <target file="syscalls.o" lastModified="14b9d621a9c">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="147640c4700"/>
@@ -133,11 +133,11 @@
       <target file="stm32f4xx_dac.o" lastModified="14b9d6205a7">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_dac.c" lastModified="141301497f0"/>
       </target>
-      <target file="lib_mem_a.o" lastModified="14b9d6229a2">
-         <source file="..\..\..\os\ucos\lib\ports\ARM-Cortex-M4\lib_mem_a.s" lastModified="14764179970"/>
-      </target>
       <target file="lib_mem.o" lastModified="14b9d61fe85">
          <source file="..\..\..\os\ucos\lib\lib_mem.c" lastModified="13ba8c40970"/>
+      </target>
+      <target file="lib_mem_a.o" lastModified="14b9d6229a2">
+         <source file="..\..\..\os\ucos\lib\ports\ARM-Cortex-M4\lib_mem_a.s" lastModified="14764179970"/>
       </target>
       <target file="cstartup.o" lastModified="14b9d621dd4">
          <source file="..\..\..\drivers\bsp\cstartup.s" lastModified="149d385ce10"/>
@@ -229,11 +229,11 @@
       <target file="os_prio.o" lastModified="14b9d620ff7">
          <source file="..\..\..\os\ucos\os\source\os_prio.c" lastModified="13c67f41920"/>
       </target>
+      <target file="main.o" lastModified="14ba71e63c1">
+         <source file="..\..\..\main.c" lastModified="14ba71e5afd"/>
+      </target>
       <target file="stm32f4xx_dma2d.o" lastModified="14b9d61fddf">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_dma2d.c" lastModified="141301497f0"/>
-      </target>
-      <target file="main.o" lastModified="14b9d620aa9">
-         <source file="..\..\..\main.c" lastModified="14b9d270c85"/>
       </target>
       <target file="bsp.o" lastModified="14b9d62201b">
          <source file="..\..\..\drivers\bsp\bsp.c" lastModified="14b9cc9bbc5"/>

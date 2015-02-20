@@ -1,0 +1,522 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\cpu\ARM-Cortex-M4 /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\cmsis\device\include /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Driver /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\cmsis\include /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\cfg /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Source /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os\ports /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\cmsis\device /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\OS /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\lib /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Driver\ST\STM3240x /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Line /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\bsp\os\ucos /I..\..\..\..\..\Users\Michel\Documents\Cours\RT /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os\ports\ARM-Cortex-M4 /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\cmsis /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\hal\include /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\cpu /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\hal /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\cfg /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\bsp\os /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os\ports\ARM-Cortex-M4\Generic /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\serial\Driver\ST /I..\..\..\..\..\Users\Michel\Documents\Cours /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32 /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\os\ucos\os\source /I..\..\..\..\..\Users\Michel\Documents\Cours\RT\uCOS_stm32\drivers\bsp">
+      <source file="..\..\..\os\ucos\serial\Driver\ST\STM3240x\serial_bsp_stm3240x.c" lastModified="138e1eacd90">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\os\ucos\serial\Driver\ST\STM3240x\serial_bsp_stm3240x.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_hash_md5.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_hash.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_hash.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cfg\app_cfg.h" lastModified="147641a7000">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_int.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_core.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_dcmi.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_dcmi.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_time.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_i2c.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_spi.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_spi.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_crc.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_crc.h"/>
+      </source>
+      <source file="..\..\..\drivers\cmsis\include\core_cm4.h" lastModified="14660df6a68">
+         <include file="..\..\..\drivers\cmsis\include\core_cmInstr.h"/>
+         <include file="..\..\..\drivers\cmsis\include\core_cmFunc.h"/>
+         <include file="..\..\..\drivers\cmsis\include\core_cm4_simd.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_fsmc.c" lastModified="146ebb8f690">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_fsmc.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_dbgmcu.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_dac.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_dac.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_tdes.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_cryp.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_dma2d.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_dma2d.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_flash.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\lib\lib_math.h" lastModified="13ba8c40970">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\cpu\cpu_core.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Line\serial_line_dflt.h" lastModified="138e1ead560">
+      </source>
+      <source file="..\..\..\os\ucos\lib\lib_math.c" lastModified="13ba8c40970">
+         <include file="..\..\..\os\ucos\lib\lib_math.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Line\serial_line_dflt.c" lastModified="138e1ead560">
+         <include file="..\..\..\os\ucos\serial\Source\serial.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cfg\os_cfg.h" lastModified="13c61d829f0">
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_cryp.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_syscfg.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_syscfg.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h" lastModified="146d86d9618">
+         <include file="..\..\..\drivers\cmsis\include\core_cm4.h"/>
+         <include file="..\..\..\drivers\cmsis\device\include\system_stm32f4xx.h"/>
+         <include file="..\..\..\cfg\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_adc.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Source\serial.h" lastModified="138e1eadd30">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_ascii.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_str.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_mem.h"/>
+         <include file="..\..\..\os\ucos\cfg\app_cfg.h"/>
+         <include file="..\..\..\os\ucos\serial\Source\serial_buf.h"/>
+         <include file="..\..\..\os\ucos\serial\Source\serial_type.h"/>
+         <include file="..\..\..\os\ucos\serial\Line\serial_line_dflt.h"/>
+      </source>
+      <source file="..\..\..\cfg\stm32f4xx_conf.h" lastModified="14b9bfbb8b7">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_adc.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_can.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_crc.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_cryp.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_dac.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_dbgmcu.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_dcmi.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_dma.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_exti.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_flash.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_hash.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_i2c.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_iwdg.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_pwr.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rng.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rtc.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_sdio.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_spi.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_syscfg.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_usart.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_wwdg.h"/>
+         <include file="..\..\..\drivers\hal\include\misc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_type.h" lastModified="13c67f41920">
+      </source>
+      <source file="..\..\..\os\ucos\lib\lib_ascii.h" lastModified="13ba8c40970">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Source\serial.c" lastModified="13a5497afb0">
+         <include file="..\..\..\os\ucos\serial\Source\serial.h"/>
+         <include file="..\..\..\os\ucos\serial\OS\serial_os.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\lib\lib_ascii.c" lastModified="13ba8c40970">
+         <include file="..\..\..\os\ucos\lib\lib_ascii.h"/>
+      </source>
+      <source file="..\..\..\drivers\cmsis\include\core_cmFunc.h" lastModified="14660df6e50">
+      </source>
+      <source file="..\..\..\os\ucos\lib\lib_mem.h" lastModified="13ba8c40970">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\cpu\cpu_core.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+         <include file="..\..\..\os\ucos\cfg\lib_cfg.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_gpio.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\lib\lib_str.h" lastModified="13ba8c3e648">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_ascii.h"/>
+         <include file="..\..\..\os\ucos\cfg\lib_cfg.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\lib\lib_mem.c" lastModified="13ba8c40970">
+         <include file="..\..\..\os\ucos\lib\lib_mem.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_tim.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\lib\lib_str.c" lastModified="13ba8c40970">
+         <include file="..\..\..\os\ucos\lib\lib_str.h"/>
+      </source>
+      <source file="..\..\..\drivers\bsp\bsp_int.c" lastModified="13adeeddef0">
+         <include file="..\..\..\includes.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_mutex.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_sdio.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_dma.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_rtc.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rtc.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_usart.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\misc.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\misc.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\misc.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_wwdg.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_wwdg.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Line\serial_line_tty.h" lastModified="13a54989a10">
+         <include file="..\..\..\os\ucos\serial\Source\serial.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Line\serial_line_tty.c" lastModified="13a54989a10">
+         <include file="..\..\..\os\ucos\serial\Line\serial_line_tty.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_iwdg.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\lib\lib_def.h" lastModified="13ba8f56a10">
+         <include file="..\..\..\os\ucos\cpu\cpu_def.h"/>
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_can.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\OS\serial_os.h" lastModified="138e1ead560">
+      </source>
+      <source file="..\..\..\drivers\cmsis\include\core_cm4_simd.h" lastModified="14660df6e50">
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_sai.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_dma2d.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os_app_hooks.h" lastModified="13c61d829f0">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_dbgmcu.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_dbgmcu.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h" lastModified="13894923c40">
+         <include file="..\..\..\os\ucos\cpu\cpu_def.h"/>
+         <include file="..\..\..\os\ucos\cfg\cpu_cfg.h"/>
+      </source>
+      <source file="..\..\..\os_app_hooks.c" lastModified="13c61d829f0">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+         <include file="..\..\..\os_app_hooks.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_pwr.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_ltdc.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_ltdc.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_stat.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_hash.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_hash.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_exti.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_dbg.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\cmsis\include\core_cmInstr.h" lastModified="14660df6e50">
+      </source>
+      <source file="..\..\..\drivers\bsp\bsp.h" lastModified="13c62b80a70">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\cpu\cpu_core.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_ascii.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_gpio.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_pend_multi.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\bsp\bsp.c" lastModified="14b9cc9bbc5">
+         <include file="..\..\..\drivers\bsp\bsp.h"/>
+         <include file="..\..\..\drivers\bsp\os\ucos\bsp_os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_rng.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os.h" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\cfg\os_cfg.h"/>
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\cpu\cpu_core.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+         <include file="..\..\..\os\ucos\os\source\os_type.h"/>
+         <include file="..\..\..\os\ucos\os\ports\ARM-Cortex-M4\Generic\os_cpu.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_prio.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cfg\cpu_cfg.h" lastModified="13c61d829f0">
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_i2c.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_i2c.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_mem.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_task.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Driver\ST\serial_drv_stm32.h" lastModified="138e1eacd90">
+      </source>
+      <source file="..\..\..\os\ucos\cpu\cpu_def.h" lastModified="138939e56c0">
+      </source>
+      <source file="..\..\..\os\ucos\serial\Driver\ST\serial_drv_stm32.c" lastModified="138e1eacd90">
+         <include file="..\..\..\os\ucos\serial\Source\serial.h"/>
+         <include file="..\..\..\os\ucos\serial\Driver\ST\serial_drv_stm32.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_var.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_q.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\bsp\cstartup.s" lastModified="149d385ce10">
+      </source>
+      <source file="..\..\..\drivers\cmsis\device\source\templates\system_stm32f4xx.c" lastModified="1446a0b10d0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\cmsis\device\include\system_stm32f4xx.h" lastModified="14130148850">
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_cryp.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_rcc.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\drivers\bsp\bsp_periph.c" lastModified="13adeeddef0">
+         <include file="..\..\..\drivers\bsp\bsp.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_dcmi.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Line\serial_line_probe.h" lastModified="138e1ead560">
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_msg.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_adc.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_adc.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Line\serial_line_probe.c" lastModified="138e1ead560">
+         <include file="..\..\..\os\ucos\serial\Source\serial.h"/>
+         <include file="..\..\..\os\ucos\serial\Line\serial_line_probe.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_crc.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_spi.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_sdio.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_sdio.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\sorting.h" lastModified="14ba71b35f9">
+         <include file="..\..\..\os\ucos\cfg\app_cfg.h"/>
+         <include file="..\..\..\includes.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\ports\ARM-Cortex-M4\Generic\os_cpu_a.s" lastModified="1389494f390">
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_aes.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_cryp.h"/>
+      </source>
+      <source file="..\..\..\sorting.c" lastModified="14ba719f72a">
+         <include file="..\..\..\sorting.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cpu\cpu_core.h" lastModified="13a1b003f60">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+         <include file="..\..\..\os\ucos\cfg\cpu_cfg.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_mem.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_str.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\ports\ARM-Cortex-M4\Generic\os_cpu_c.c" lastModified="13894987dd0">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_fsmc.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cpu\cpu_core.c" lastModified="138939e1070">
+         <include file="..\..\..\os\ucos\cpu\cpu_core.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_dac.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\OS\uCOS-III\serial_os.c" lastModified="138e1ead560">
+         <include file="..\..\..\os\ucos\serial\Source\serial.h"/>
+         <include file="..\..\..\os\ucos\serial\OS\serial_os.h"/>
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\includes.h" lastModified="149d38cf618">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_ascii.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_math.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_mem.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_str.h"/>
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+         <include file="..\..\..\drivers\bsp\bsp.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Source\serial_buf.h" lastModified="138e1ead560">
+      </source>
+      <source file="..\..\..\os\ucos\serial\Source\serial_buf.c" lastModified="138e1eadd30">
+         <include file="..\..\..\os\ucos\serial\Source\serial.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_dma.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_dma.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_tmr.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cfg\lib_cfg.h" lastModified="13c61e0d4b0">
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_iwdg.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_iwdg.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_syscfg.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_gpio.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_des.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_cryp.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_can.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_can.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_tim.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_hash_sha1.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_hash.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\lib\ports\ARM-Cortex-M4\lib_mem_a.s" lastModified="14764179970">
+      </source>
+      <source file="..\..\..\os\ucos\serial\Source\serial_type.h" lastModified="138e1eadd30">
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_tick.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_sai.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_sai.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_sem.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_rtc.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\syscalls\syscalls.c" lastModified="147640c56a0">
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_flash.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_flash.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu_a.s" lastModified="138949de4a0">
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_pwr.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_pwr.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu_c.c" lastModified="138949d09e0">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\os\ucos\cpu\cpu_core.h"/>
+         <include file="..\..\..\os\ucos\lib\lib_def.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_exti.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_exti.h"/>
+      </source>
+      <source file="..\..\..\drivers\bsp\os\ucos\bsp_os.h" lastModified="13c47e37ae0">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_usart.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_usart.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\cfg\os_cfg_app.h" lastModified="13c61d829f0">
+      </source>
+      <source file="..\..\..\drivers\bsp\os\ucos\bsp_os.c" lastModified="13c47ea58b0">
+         <include file="..\..\..\drivers\bsp\bsp.h"/>
+         <include file="..\..\..\drivers\bsp\os\ucos\bsp_os.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_wwdg.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_rng.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rng.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_cfg_app.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\cfg\os_cfg_app.h"/>
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\source\os_flag.c" lastModified="13c67f41920">
+         <include file="..\..\..\os\ucos\os\source\os.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\os\ports\ARM-Cortex-M4\Generic\os_cpu.h" lastModified="138948f1790">
+      </source>
+      <source file="..\..\..\drivers\hal\include\stm32f4xx_ltdc.h" lastModified="14130149fc0">
+         <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\os\ucos\serial\Driver\ST\STM3240x\serial_bsp_stm3240x.h" lastModified="138e1eacd90">
+         <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>
+         <include file="..\..\..\drivers\bsp\bsp.h"/>
+         <include file="..\..\..\os\ucos\serial\Source\serial.h"/>
+         <include file="..\..\..\os\ucos\serial\Driver\ST\serial_drv_stm32.h"/>
+      </source>
+   </includePath>
+</dependencies>
