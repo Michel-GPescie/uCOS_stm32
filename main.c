@@ -49,7 +49,7 @@ int main(void) {
     /* OS initialization. */
 
     OSInit(&oseError);
-
+    /* Blink LED :D */
     OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,
                  (CPU_CHAR     *)"App Task Start",
                  (OS_TASK_PTR   )AppTaskStart, 
@@ -85,8 +85,78 @@ int main(void) {
                  (void         *)0,
                  (OS_PRIO       )BUTTON_TASK_PRIO,
                  (CPU_STK      *)&buttonSTK[0],
-                 (CPU_STK_SIZE  )buttonSTK[BUTTON_STK_SIZE / 2],
+                 (CPU_STK_SIZE  )buttonSTK[BUTTON_STK_SIZE / 10],
                  (CPU_STK_SIZE  )BUTTON_STK_SIZE,
+                 (OS_MSG_QTY    )0,
+                 (OS_TICK       )0,
+                 (void         *)0,
+                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                 (OS_ERR       *)&oseError);
+    /* tapis 0 */
+    OSTaskCreate((OS_TCB       *)&tapisEntreeTCB,
+                 (CPU_CHAR     *)"Tapis 0",
+                 (OS_TASK_PTR   )tapisEntreeTask,
+                 (void         *)0,
+                 (OS_PRIO       )TAPIS_ENTREE_PRIO,
+                 (CPU_STK      *)&tapisEntreeSTK[0],
+                 (CPU_STK_SIZE  )tapisEntreeSTK[TAPIS_ENTREE_STK_SIZE / 10],
+                 (CPU_STK_SIZE  )TAPIS_ENTREE_STK_SIZE,
+                 (OS_MSG_QTY    )0,
+                 (OS_TICK       )0,
+                 (void         *)0,
+                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                 (OS_ERR       *)&oseError);
+    /* tapis 1 */
+    OSTaskCreate((OS_TCB       *)&tapisTransfertTCB,
+                 (CPU_CHAR     *)"Tapis 1",
+                 (OS_TASK_PTR   )tapisTransfertTask,
+                 (void         *)0,
+                 (OS_PRIO       )TAPIS_TRANSFERT_PRIO,
+                 (CPU_STK      *)&tapisTransfertSTK[0],
+                 (CPU_STK_SIZE  )tapisTransfertSTK[TAPIS_TRANSFERT_STK_SIZE / 10],
+                 (CPU_STK_SIZE  )TAPIS_TRANSFERT_STK_SIZE,
+                 (OS_MSG_QTY    )0,
+                 (OS_TICK       )0,
+                 (void         *)0,
+                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                 (OS_ERR       *)&oseError);
+    /* Rotor de tri */
+    OSTaskCreate((OS_TCB       *)&triTCB,
+                 (CPU_CHAR     *)"Tri",
+                 (OS_TASK_PTR   )triTask,
+                 (void         *)0,
+                 (OS_PRIO       )TRI_TASK_PRIO,
+                 (CPU_STK      *)&triSTK[0],
+                 (CPU_STK_SIZE  )triSTK[TRI_STK_SIZE / 10],
+                 (CPU_STK_SIZE  )TRI_STK_SIZE,
+                 (OS_MSG_QTY    )0,
+                 (OS_TICK       )0,
+                 (void         *)0,
+                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                 (OS_ERR       *)&oseError);
+    /* Evacuation vers la gauche */
+    OSTaskCreate((OS_TCB       *)&evacGaucheTCB,
+                 (CPU_CHAR     *)"Tapis d'evacuation vers la gauche",
+                 (OS_TASK_PTR   )evacGaucheTask,
+                 (void         *)0,
+                 (OS_PRIO       )EVAC_GAUCHE_TASK_PRIO,
+                 (CPU_STK      *)&evacGaucheSTK[0],
+                 (CPU_STK_SIZE  )evacGaucheSTK[EVAC_GAUCHE_STK_SIZE / 10],
+                 (CPU_STK_SIZE  )EVAC_GAUCHE_STK_SIZE,
+                 (OS_MSG_QTY    )0,
+                 (OS_TICK       )0,
+                 (void         *)0,
+                 (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                 (OS_ERR       *)&oseError);
+    /* Evacuation vers la droite */
+    OSTaskCreate((OS_TCB       *)&evacDroiteTCB,
+                 (CPU_CHAR     *)"Tapis d'evacuation vers la droite",
+                 (OS_TASK_PTR   )evacDroiteTask,
+                 (void         *)0,
+                 (OS_PRIO       )EVAC_DROITE_TASK_PRIO,
+                 (CPU_STK      *)&evacDroiteSTK[0],
+                 (CPU_STK_SIZE  )evacDroiteSTK[EVAC_DROITE_STK_SIZE / 10],
+                 (CPU_STK_SIZE  )EVAC_DROITE_STK_SIZE,
                  (OS_MSG_QTY    )0,
                  (OS_TICK       )0,
                  (void         *)0,
