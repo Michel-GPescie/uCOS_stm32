@@ -3,21 +3,14 @@
 #include <sorting.h>
 #include <pinmap.h>
 
-#define BUTTON (GPIOA->IDR & 0x0001)
-#define BUTTON_STK_SIZE 16u
-#define BUTTON_TASK_PRIO 8u
-/* Semaphores ---------------------------------------------------------------------------*/
-OS_SEM sem0;
 
 /* Tasks' control blocks. ---------------------------------------------------------------*/
 
 static  OS_TCB   AppTaskStartTCB;
-static OS_TCB buttonTCB;
 
 /* Tasks' stack. ------------------------------------------------------------------------*/
 
 static  CPU_STK  AppTaskStartStk[APP_CFG_TASK_START_STK_SIZE];
-static	CPU_STK buttonSTK[BUTTON_STK_SIZE];
 
 /* Tasks. -------------------------------------------------------------------------------*/
 
@@ -30,21 +23,9 @@ int main(void) {
 
 	OS_ERR  			oseError;
 
-	GPIO_InitTypeDef	GPIO_InitStructure;
-
     /* GPIOD peripheral. */
 
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOD, ENABLE);
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13| GPIO_Pin_14| GPIO_Pin_15;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-    GPIO_Init(GPIOD, &GPIO_InitStructure);
-
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
+	initPinmap();
 
     /* Disable all interrupts. */
 
@@ -56,7 +37,11 @@ int main(void) {
 
     /* Semaphores */
 
-    OSSemCreate(&sem0, "semaphore tapis 0", 1, &err);
+    OSSemCreate(&Sem0to1, "semaphore tapis 0 à 1", 0, &oseError);
+    OSSemCreate(&SemFinLigne, "semaphore fin de ligne", 0, &oseError);
+
+    OSSemCreate(&Sem1to2, "semaphore tapis 1 à 2", 0, &oseError);
+    OSSemCreate(&Sem1to3, "semaphore tapis 1 à 3", 0, &oseError);
 
     /* Blink LED :D */
     OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,
@@ -217,24 +202,59 @@ static void AppTaskStart(void *p_arg) {
 }
 
 void initPinmap(){
-	GPIO_InitTypeDef GPIO_struct;
+	GPIO_InitTypeDef  	GPIO_InitStructure;
 
-	GPIO_struct.GPIO_Pin = IDO_0 | IDO_1 | IDO_2 | IDO_3 | IDO_4 | IDO_5 | IDO_6 | IDO_7;
-	GPIO_struct.GPIO_Mode = GPIO_Mode_IN;
-	GPIO_struct.GPIO_OType = GPIO_OType_PP;
-	GPIO_struct.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_struct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_Init(IDO_SLOT1_PORT, &GPIO_struct);
+		// Configure STM32 outputs (USB-4750 inputs)
 
-	GPIO_struct.GPIO_Pin = IDO_8 | IDO_9 | IDO_10 | IDO_11 | IDO_12 | IDO_13 | IDO_14 | IDO_15;
-	GPIO_Init(IDO_SLOT2_PORT, &GPIO_struct);
+			// IDI0 to IDI7 on GPIOB
 
-	GPIO_struct.GPIO_Pin = IDI_0 | IDI_1 | IDI_2 | IDI_3 | IDI_4 | IDI_5 | IDI_6 | IDI_7;
-	GPIO_struct.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_Init(IDI_SLOT1_PORT, &GPIO_struct);
+			RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
 
-	GPIO_struct.GPIO_Pin = IDI_8 | IDI_9 | IDI_10 | IDI_11 | IDI_12 | IDI_13 | IDI_14 | IDI_15;
-	GPIO_Init(IDI_SLOT2_PORT, &GPIO_struct);
+			GPIO_InitStructure.GPIO_Pin = IDI_0 | IDI_1 | IDI_2 | IDI_3 | IDI_4 | IDI_5 | IDI_6 | IDI_7;
+			GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+			GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+			GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+			GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+			GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+			// IDI8 to IDI15 on GPIOC
+
+			RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+
+			GPIO_InitStructure.GPIO_Pin = IDI_8 | IDI_9 | IDI_10 | IDI_11 | IDI_12 | IDI_13 | IDI_14 | IDI_15;
+			GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+			GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+			GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+			GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+			GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+
+		// Configure STM32 inputs (USB-4750 outputs)
+
+			// IDO0 to IDO7 on GPIOD
+
+			RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+
+			GPIO_InitStructure.GPIO_Pin = IDO_0 | IDO_1 | IDO_2 | IDO_3 | IDO_4 | IDO_5 | IDO_6 | IDO_7;
+			GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+			GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+			GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+			GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+			GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+			// IDO8 to IDO15 on GPIOE
+
+			RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
+
+			GPIO_InitStructure.GPIO_Pin = IDO_8 | IDO_9 | IDO_10 | IDO_11 | IDO_12 | IDO_13 | IDO_14 | IDO_15;
+			GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+			GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+			GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+			GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+			GPIO_Init(GPIOE, &GPIO_InitStructure);
+
+	GPIO_SetBits(IDI_SLOT1_PORT, IDI_0 | IDI_1 | IDI_2 | IDI_3 | IDI_4 | IDI_5 | IDI_6 | IDI_7);
+	GPIO_SetBits(IDI_SLOT2_PORT, IDI_8 | IDI_9 | IDI_10 | IDI_11 | IDI_12 | IDI_13 | IDI_14 | IDI_15);
 }
 
 #define USE_FULL_ASSERT

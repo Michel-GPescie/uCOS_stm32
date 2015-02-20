@@ -16,6 +16,15 @@
 
 #include  <app_cfg.h>
 #include  <includes.h>
+#include <pinmap.h>
+
+
+/* Semaphores ---------------------------------------------------------------------------*/
+OS_SEM Sem0to1;
+OS_SEM SemFinLigne;
+OS_SEM Sem1to2;
+OS_SEM Sem1to3;
+
 
 /**	Chaque tache aura les elements suivants:
  *  #define:
@@ -33,7 +42,7 @@
 /* * * * *		Tapis entree		 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
 #define TAPIS_ENTREE_STK_SIZE 128u
-#define TAPIS_ENTREE_PRIO	10u
+#define TAPIS_ENTREE_PRIO	11u
 
 OS_TCB tapisEntreeTCB;
 CPU_STK tapisEntreeSTK[TAPIS_ENTREE_STK_SIZE];
