@@ -25,7 +25,7 @@ void tapisEntreeTask(void *p_arg)	{
 		switch(Etat_0)
 		{
 			case P4:
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_0)==1)	{
+				if (GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_0)==1)	{
 					Etat_0 = P5;
 					OSTaskSemPost(&Sem0to1, OS_OPT_POST_1, &err);
 				} else {
@@ -137,10 +137,91 @@ void rotorTask(void *p_arg)	{
 
 void evacGaucheTask(void *p_arg)	{
 	OS_ERR err;
+	CPU_TS ts;
 
+	enum tapis_5{
+		P20,
+		P18,
+		P19,
+		P29	// ????
+	};
+	int Etat_5 = P20;
+	GPIO_SetBits(IDI_SLOT1_PORT, IDI_5);
+
+	while(DEF_ON)	{
+		switch(Etat_5){
+			case P20:
+				OSSemPend(&Sem2to5,
+						  0,
+						  OS_OPT_PEND_BLOCKING,
+						  &ts,
+						  &err);
+				GPIO_ResetBits(IDI_SLOT1_PORT, IDI_5);
+				Etat_5 = P18;
+				break;
+			case P18:
+				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_10))	{
+					GPIO_ResetBits(IDI_SLOT1_PORT, IDI_5);
+					Etat_5 = P19;
+				}
+				break;
+			case P19:
+				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_10)==0)	{
+					OSTaskSemPost(&SemFinLigne, OS_OPT_POST_1, &err);
+					GPIO_SetBits(IDI_SLOT1_PORT, IDI_5);
+					Etat_5 = P20;
+				}
+				break;
+			default:
+				break;
+				/* il y a eu un pepin */
+
+		}
+	}
 }
 
 void evacDroiteTask(void *p_arg)	{
 	OS_ERR err;
+	CPU_TS ts;
+
+	enum tapis_6{
+		P17,
+		P15,
+		P16,
+		P30	// ????
+	};
+	int Etat_6 = P17;
+	GPIO_SetBits(IDI_SLOT1_PORT, IDI_6);
+
+	while(DEF_ON)	{
+		switch(Etat_6){
+			case P17:
+				OSSemPend(&Sem2to6,
+						  0,
+						  OS_OPT_PEND_BLOCKING,
+						  &ts,
+						  &err);
+				GPIO_ResetBits(IDI_SLOT1_PORT, IDI_6);
+				Etat_6 = P15;
+				break;
+			case P15:
+				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_9))	{
+					GPIO_ResetBits(IDI_SLOT1_PORT, IDI_6);
+					Etat_6 = P16;
+				}
+				break;
+			case P16:
+				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_9)==0)	{
+					OSTaskSemPost(&SemFinLigne, OS_OPT_POST_1, &err);
+					GPIO_SetBits(IDI_SLOT1_PORT, IDI_6);
+					Etat_6 = P17;
+				}
+				break;
+			default:
+				break;
+				/* il y a eu un pepin */
+
+		}
+	}
 
 }

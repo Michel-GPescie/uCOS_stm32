@@ -18,26 +18,31 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/main.c" title="main.c" tooltip="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/main.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/main.c" title="main.c" tooltip="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4561" selectionTopPixel="1464"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1200" selectionTopPixel="4143"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="sorting.c" partName="sorting.c" path="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/sorting.c" title="sorting.c" tooltip="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/sorting.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="sorting.c" partName="sorting.c" path="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/sorting.c" title="sorting.c" tooltip="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/sorting.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/Application/sorting.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="138" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1038" selectionTopPixel="3293"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="sorting.h" partName="sorting.h" path="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/sorting.h" title="sorting.h" tooltip="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/sorting.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/Application/sorting.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="138" selectionTopPixel="1066"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="641" selectionTopPixel="26"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="pinmap.h" partName="pinmap.h" path="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/pinmap.h" title="pinmap.h" tooltip="C:/Users/Michel/Documents/Cours/RT/uCOS_stm32/pinmap.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/pinmap.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="556"/>
 </editor>
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="3">
 <expanded>
 <element path="/Project"/>
 <element path="/Project/Application"/>
@@ -48,7 +53,7 @@
 <element path="/Project/os/ucos/cfg"/>
 </expanded>
 <selection>
-<element path="/Project/Application/sorting.h"/>
+<element path="/Project/pinmap.h"/>
 </selection>
 </viewState>
 </view>
@@ -57,9 +62,6 @@
 </view>
 <view id="org.eclipse.cdt.dsf.debug.ui.disassembly.view" partName="Disassembly">
 <viewState disassembly.syncActiveContext="true" disassembly.trackExpression="false"/>
-</view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
-<viewState/>
 </view>
 </views>
 <perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
@@ -92,12 +94,15 @@
 <hide_toolbar_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
-<view id="org.coocox.builder.ui.views.ProjectView"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars>
+<fastViewBar fastViewLocation="16384" id="org.eclipse.ui.internal.ViewStack@734957" orientation="512" selectedTabId="org.coocox.builder.ui.views.ProjectView" style="0">
+<fastViews>
+<view id="org.coocox.builder.ui.views.ProjectView" ratio="0.29905063"/>
+</fastViews>
+</fastViewBar>
 <fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@1321b5a" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="0">
 <fastViews>
-<view id="org.eclipse.ui.console.ConsoleView" ratio="0.290938"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.28774422"/>
 </fastViews>
 </fastViewBar>
 </fastViewBars>
@@ -116,7 +121,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1321b5a" ratio="0.79932356" ratioLeft="709" ratioRight="178" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1d0c9d7">
-<folder appearance="2" expanded="2">
+<folder appearance="2" expanded="0">
 <page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
@@ -128,24 +133,20 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@d3f20f" ratio="0.7973103" ratioLeft="830" ratioRight="211" relationship="2" relative="org.eclipse.ui.internal.ViewStack@13541eb">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.coocox.component.ui.Help" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.coocox.coassistant.view.CoAssistantView" label="LabelNotFound"/>
 <page content="org.coocox.builder.ui.MoreExampleView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.44875348" ratioLeft="324" ratioRight="398" relationship="4" relative="org.eclipse.ui.internal.ViewStack@13541eb"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@734957" ratio="0.36980608" ratioLeft="267" ratioRight="455" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1d0c9d7">
-<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">
-<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="0">
+<page content="org.coocox.builder.ui.views.ProjectView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </mainWindow>
@@ -250,161 +251,162 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/os/ucos/cfg/os_cfg.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/Application/blink.h"/>
-<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
-<org.coocox.builder.ui.editors.ConfigEditor/>
-</editor>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/Application/sorting.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/Application/sorting.h"/>
-<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
-<org.coocox.builder.ui.editors.ConfigEditor/>
-</editor>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/Application/sorting.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/Application/sorting.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/Application/sorting.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/pinmap.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/Application/sorting.h"/>
 </editors>
-<item historyLabel="Configuration" index="3"/>
-<item historyLabel="os_cfg.h" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Configuration" index="3"/>
-<item historyLabel="blink.h" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="sorting.h" index="1">
+<position info="not_deleted" x="648" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="4561" y="0"/>
 </item>
-<item historyLabel="sorting.c" index="4">
-<position info="not_deleted" x="363" y="0"/>
-</item>
-<item historyLabel="sorting.h" index="5">
-<position info="not_deleted" x="391" y="0"/>
-</item>
-<item historyLabel="sorting.c" index="4">
-<position info="not_deleted" x="363" y="0"/>
-</item>
-<item historyLabel="sorting.h" index="5">
-<position info="not_deleted" x="0" y="337"/>
-</item>
-<item historyLabel="sorting.c" index="4">
-<position info="not_deleted" x="363" y="0"/>
-</item>
-<item historyLabel="sorting.c" index="4">
-<position/>
-</item>
-<item historyLabel="Configuration" index="3"/>
-<item historyLabel="Configuration" index="6"/>
-<item historyLabel="main.c" index="7">
-<position info="not_deleted" x="4561" y="0"/>
-</item>
-<item historyLabel="Configuration" index="6"/>
-<item historyLabel="main.c" index="7">
-<position info="not_deleted" x="4561" y="0"/>
-</item>
-<item historyLabel="sorting.c" index="8">
-<position info="not_deleted" x="393" y="2"/>
-</item>
-<item historyLabel="main.c" index="7">
-<position info="not_deleted" x="4561" y="0"/>
-</item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="648" y="0"/>
 </item>
-<item historyLabel="main.c" index="7">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="4561" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
-<position info="not_deleted" x="648" y="0"/>
-</item>
-<item historyLabel="sorting.c" index="8">
-<position info="not_deleted" x="393" y="2"/>
-</item>
-<item historyLabel="main.c" index="7">
-<position info="not_deleted" x="4561" y="0"/>
-</item>
-<item historyLabel="sorting.h" index="9">
-<position info="not_deleted" x="648" y="0"/>
-</item>
-<item historyLabel="main.c" index="7">
-<position info="not_deleted" x="4561" y="0"/>
-</item>
-<item historyLabel="sorting.h" index="9">
-<position info="not_deleted" x="648" y="0"/>
-</item>
-<item historyLabel="main.c" index="7">
-<position info="not_deleted" x="4561" y="0"/>
-</item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="581" y="0"/>
 </item>
-<item historyLabel="main.c" index="7">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="4561" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="974" y="0"/>
 </item>
-<item historyLabel="main.c" index="7">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="4561" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="974" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="972" y="0"/>
 </item>
-<item historyLabel="sorting.c" index="10">
+<item historyLabel="sorting.c" index="2">
 <position info="not_deleted" x="363" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="1274" y="39"/>
 </item>
-<item historyLabel="sorting.c" index="10">
+<item historyLabel="sorting.c" index="2">
 <position info="not_deleted" x="697" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="1547" y="28"/>
 </item>
-<item historyLabel="sorting.c" index="10">
+<item historyLabel="sorting.c" index="2">
 <position info="not_deleted" x="697" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="1828" y="30"/>
 </item>
-<item historyLabel="sorting.c" index="10">
+<item historyLabel="sorting.c" index="2">
 <position info="not_deleted" x="697" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="2133" y="35"/>
 </item>
-<item historyLabel="sorting.c" index="10">
+<item historyLabel="sorting.c" index="2">
 <position info="not_deleted" x="697" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="2450" y="35"/>
 </item>
-<item historyLabel="sorting.c" index="10">
+<item historyLabel="sorting.c" index="2">
 <position info="not_deleted" x="690" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="2450" y="35"/>
 </item>
-<item historyLabel="main.c" index="11">
+<item historyLabel="main.c" index="3">
 <position info="not_deleted" x="4561" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="138" y="0"/>
 </item>
-<item historyLabel="sorting.c" index="10">
+<item historyLabel="sorting.c" index="2">
 <position info="not_deleted" x="138" y="0"/>
 </item>
-<item historyLabel="sorting.h" index="9">
+<item historyLabel="sorting.h" index="1">
 <position info="not_deleted" x="138" y="0"/>
 </item>
-<item active="true" historyLabel="sorting.c" index="10">
+<item historyLabel="sorting.c" index="2">
 <position info="not_deleted" x="138" y="0"/>
+</item>
+<item historyLabel="pinmap.h" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="2939" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3598" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3594" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3132" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3232" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3301" y="0"/>
+</item>
+<item historyLabel="pinmap.h" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3301" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3279" y="0"/>
+</item>
+<item historyLabel="main.c" index="5">
+<position info="not_deleted" x="4697" y="0"/>
+</item>
+<item historyLabel="main.c" index="5">
+<position/>
+</item>
+<item historyLabel="sorting.h" index="6">
+<position info="not_deleted" x="641" y="0"/>
+</item>
+<item historyLabel="main.c" index="5">
+<position info="not_deleted" x="1200" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3907" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3557" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3910" y="14"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3666" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3910" y="14"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="2815" y="0"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="3092" y="44"/>
+</item>
+<item historyLabel="sorting.c" index="2">
+<position info="not_deleted" x="1038" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="5">
+<position info="not_deleted" x="1200" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -413,14 +415,23 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pinmap.h" tooltip="Project/pinmap.h">
+<persistable path="/Project/pinmap.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Project/main.c">
+<persistable path="/Project/main.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="app_cfg.h" tooltip="Project/os/ucos/cfg/app_cfg.h">
+<persistable path="/Project/os/ucos/cfg/app_cfg.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="os_cfg_app.h" tooltip="Project/os/ucos/cfg/os_cfg_app.h">
+<persistable path="/Project/os/ucos/cfg/os_cfg_app.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sorting.h" tooltip="Project/Application/sorting.h">
 <persistable path="/Project/Application/sorting.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sorting.c" tooltip="Project/Application/sorting.c">
 <persistable path="/Project/Application/sorting.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="os_cfg_app.h" tooltip="Project/os/ucos/cfg/os_cfg_app.h">
-<persistable path="/Project/os/ucos/cfg/os_cfg_app.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="os_cfg.h" tooltip="Project/os/ucos/cfg/os_cfg.h">
 <persistable path="/Project/os/ucos/cfg/os_cfg.h"/>
@@ -446,15 +457,6 @@
 <file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
 <persistable>&#x0A;<subPage/>
 </persistable>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.h" tooltip="uCOS_stm32/drivers/cmsis/device/include/system_stm32f4xx.h">
-<persistable path="/uCOS_stm32/drivers/cmsis/device/include/system_stm32f4xx.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_gpio.h" tooltip="Project/drivers/hal/include/stm32f4xx_gpio.h">
-<persistable path="/Project/drivers/hal/include/stm32f4xx_gpio.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="misc.h" tooltip="Project/drivers/hal/include/misc.h">
-<persistable path="/Project/drivers/hal/include/misc.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="misc.h" tooltip="Project/drivers/hal/include/misc.h">
 <persistable path="/Project/drivers/hal/include/misc.h"/>

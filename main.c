@@ -43,6 +43,9 @@ int main(void) {
     OSSemCreate(&Sem1to2, "semaphore tapis 1 à 2", 0, &oseError);
     OSSemCreate(&Sem1to3, "semaphore tapis 1 à 3", 0, &oseError);
 
+    OSSemCreate(&Sem2to5, "semaphore tapis 2 à 5", 0, &oseError);
+    OSSemCreate(&Sem2to6, "semaphore tapis 2 à 6", 0, &oseError);
+
     /* Blink LED :D */
     OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,
                  (CPU_CHAR     *)"App Task Start",

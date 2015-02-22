@@ -24,6 +24,8 @@ OS_SEM Sem0to1;
 OS_SEM SemFinLigne;
 OS_SEM Sem1to2;
 OS_SEM Sem1to3;
+OS_SEM Sem2to5;
+OS_SEM Sem2to6;
 
 
 /**	Chaque tache aura les elements suivants:
