@@ -276,7 +276,7 @@
          <include file="..\..\..\os\ucos\lib\lib_ascii.h"/>
          <include file="..\..\..\drivers\hal\include\stm32f4xx_gpio.h"/>
       </source>
-      <source file="..\..\..\main.c" lastModified="14bb207855c">
+      <source file="..\..\..\main.c" lastModified="14bbb6993a8">
          <include file="..\..\..\os\ucos\cfg\app_cfg.h"/>
          <include file="..\..\..\includes.h"/>
          <include file="..\..\..\sorting.h"/>
@@ -368,19 +368,25 @@
       <source file="..\..\..\drivers\hal\include\stm32f4xx_spi.h" lastModified="14130149fc0">
          <include file="..\..\..\drivers\cmsis\device\include\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\drivers\hal\source\stm32f4xx_sdio.c" lastModified="141301497f0">
-         <include file="..\..\..\drivers\hal\include\stm32f4xx_sdio.h"/>
-         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\sorting.h" lastModified="14bb207856c">
+      <source file="..\..\..\sorting.h" lastModified="14bbb7e5636">
          <include file="..\..\..\os\ucos\cfg\app_cfg.h"/>
          <include file="..\..\..\includes.h"/>
          <include file="..\..\..\pinmap.h"/>
+      </source>
+      <source file="..\..\..\drivers\hal\source\stm32f4xx_sdio.c" lastModified="141301497f0">
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_sdio.h"/>
+         <include file="..\..\..\drivers\hal\include\stm32f4xx_rcc.h"/>
       </source>
       <source file="..\..\..\os\ucos\os\ports\ARM-Cortex-M4\Generic\os_cpu_a.s" lastModified="1389494f390">
       </source>
       <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_aes.c" lastModified="141301497f0">
          <include file="..\..\..\drivers\hal\include\stm32f4xx_cryp.h"/>
+      </source>
+      <source file="..\..\..\sorting.c" lastModified="14bbb720a1d">
+         <include file="..\..\..\os\ucos\cfg\app_cfg.h"/>
+         <include file="..\..\..\includes.h"/>
+         <include file="..\..\..\sorting.h"/>
+         <include file="..\..\..\pinmap.h"/>
       </source>
       <source file="..\..\..\os\ucos\cpu\cpu_core.h" lastModified="13a1b003f60">
          <include file="..\..\..\os\ucos\cpu\ARM-Cortex-M4\cpu.h"/>

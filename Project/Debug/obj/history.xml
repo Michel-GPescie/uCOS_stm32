@@ -79,8 +79,8 @@
       <target file="stm32f4xx_cryp_des.o" lastModified="14b9d621272">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_cryp_des.c" lastModified="141301497f0"/>
       </target>
-      <target file="sorting.o" lastModified="14bb20c630f">
-         <source file="..\..\..\sorting.c" lastModified="14bb20c582e"/>
+      <target file="sorting.o" lastModified="14bbb7e7dd7">
+         <source file="..\..\..\sorting.c" lastModified="14bbb720a1d"/>
       </target>
       <target file="os_msg.o" lastModified="14b9d6207c3">
          <source file="..\..\..\os\ucos\os\source\os_msg.c" lastModified="13c67f41920"/>
@@ -217,11 +217,11 @@
       <target file="system_stm32f4xx.o" lastModified="14b9d621a1c">
          <source file="..\..\..\drivers\cmsis\device\source\templates\system_stm32f4xx.c" lastModified="1446a0b10d0"/>
       </target>
-      <target file="stm32f4xx_dma.o" lastModified="14b9d621b67">
-         <source file="..\..\..\drivers\hal\source\stm32f4xx_dma.c" lastModified="141301497f0"/>
-      </target>
       <target file="stm32f4xx_spi.o" lastModified="14b9d621f20">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_spi.c" lastModified="141301497f0"/>
+      </target>
+      <target file="stm32f4xx_dma.o" lastModified="14b9d621b67">
+         <source file="..\..\..\drivers\hal\source\stm32f4xx_dma.c" lastModified="141301497f0"/>
       </target>
       <target file="stm32f4xx_rcc.o" lastModified="14b9d620b90">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_rcc.c" lastModified="141301497f0"/>
@@ -229,8 +229,8 @@
       <target file="os_prio.o" lastModified="14b9d620ff7">
          <source file="..\..\..\os\ucos\os\source\os_prio.c" lastModified="13c67f41920"/>
       </target>
-      <target file="main.o" lastModified="14bb2078f5e">
-         <source file="..\..\..\main.c" lastModified="14bb207855c"/>
+      <target file="main.o" lastModified="14bbb7e80e2">
+         <source file="..\..\..\main.c" lastModified="14bbb6993a8"/>
       </target>
       <target file="stm32f4xx_dma2d.o" lastModified="14b9d61fddf">
          <source file="..\..\..\drivers\hal\source\stm32f4xx_dma2d.c" lastModified="141301497f0"/>

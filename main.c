@@ -3,6 +3,9 @@
 #include <sorting.h>
 #include <pinmap.h>
 
+/*Queue variable. -----------------------------------------------------------------------*/
+OS_Q tapis1totri;
+CPU_INT08U flag;
 
 /* Tasks' control blocks. ---------------------------------------------------------------*/
 
@@ -35,6 +38,10 @@ int main(void) {
 
     OSInit(&oseError);
 
+    /*Queues*/
+
+    OSQCreate(&tapis1totri,"tapis1totri Queue",2,&oseError);
+
     /* Semaphores */
 
     OSSemCreate(&Sem0to1, "semaphore tapis 0 à 1", 0, &oseError);
@@ -43,8 +50,13 @@ int main(void) {
     OSSemCreate(&Sem1to2, "semaphore tapis 1 à 2", 0, &oseError);
     OSSemCreate(&Sem1to3, "semaphore tapis 1 à 3", 0, &oseError);
 
+    OSSemCreate(&Sem2to4, "semaphore tapis 2 à 4", 0, &oseError);
+    OSSemCreate(&Sem4to2, "semaphore tapis 4 à 2", 0, &oseError);
     OSSemCreate(&Sem2to5, "semaphore tapis 2 à 5", 0, &oseError);
-    OSSemCreate(&Sem2to6, "semaphore tapis 2 à 6", 0, &oseError);
+    OSSemCreate(&SemtoA4, "semaphore tapis 4 etat intial", 0, &oseError);
+    OSSemCreate(&Sem3to6, "semaphore tapis 3 à 6", 0, &oseError);
+    OSSemCreate(&Sem2to6, "semaphore tapis 1 à 3", 0, &oseError);
+
 
     /* Blink LED :D */
     OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,
@@ -147,6 +159,20 @@ int main(void) {
                  (void         *)0,
                  (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
                  (OS_ERR       *)&oseError);
+    /* Tâche Rotor */
+      OSTaskCreate((OS_TCB       *)&rotorTCB,
+                   (CPU_CHAR     *)"Rotor",
+                   (OS_TASK_PTR   )rotorTask,
+                   (void         *)0,
+                   (OS_PRIO       )ROTOR_PRIO,
+                   (CPU_STK      *)&rotorSTK[0],
+                   (CPU_STK_SIZE  )rotorSTK[EVAC_DROITE_STK_SIZE / 10],
+                   (CPU_STK_SIZE  )ROTOR_STK_SIZE,
+                   (OS_MSG_QTY    )0,
+                   (OS_TICK       )0,
+                   (void         *)0,
+                   (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                   (OS_ERR       *)&oseError);
     /* Start multitasking. */
 
     OSStart(&oseError);
@@ -266,7 +292,6 @@ void initPinmap(){
 void assert_failed(uint8_t* file, uint32_t line) {
 	/* Switch off all leds. */
 /*	GPIOD->BSRRH = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
-
 	while(1) {
 		GPIOD->ODR ^= GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
 */

@@ -24,9 +24,12 @@ OS_SEM Sem0to1;
 OS_SEM SemFinLigne;
 OS_SEM Sem1to2;
 OS_SEM Sem1to3;
+OS_SEM Sem2to4;
+OS_SEM Sem4to2;
 OS_SEM Sem2to5;
+OS_SEM SemtoA4;
+OS_SEM Sem3to6;
 OS_SEM Sem2to6;
-
 
 /**	Chaque tache aura les elements suivants:
  *  #define:
@@ -78,7 +81,7 @@ void triTask(void *p_arg);
 /* * * * *			Rotor			 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
 #define ROTOR_STK_SIZE 128u
-#define ROTOR_PRIO	10u
+#define ROTOR_PRIO	9u
 
 OS_TCB rotorTCB;
 CPU_STK rotorSTK[TAPIS_ENTREE_STK_SIZE];
@@ -89,7 +92,7 @@ void rotorTask(void *p_arg);
 /* * * * *		Evacuation Gauche	 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
 #define EVAC_GAUCHE_STK_SIZE 128u
-#define EVAC_GAUCHE_PRIO	10u
+#define EVAC_GAUCHE_PRIO	8u
 
 OS_TCB evacGaucheTCB;
 CPU_STK evacGaucheSTK[EVAC_GAUCHE_STK_SIZE];
@@ -100,7 +103,7 @@ void evacGaucheTask(void *p_arg);
 /* * * * *		Evacuation Droite	 * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * */
 #define EVAC_DROITE_STK_SIZE 128u
-#define EVAC_DROITE_PRIO	10u
+#define EVAC_DROITE_PRIO	8u
 
 OS_TCB evacDroiteTCB;
 CPU_STK evacDroiteSTK[EVAC_DROITE_STK_SIZE];
