@@ -31,6 +31,20 @@ OS_SEM SemtoA4;
 OS_SEM Sem3to6;
 OS_SEM Sem2to6;
 
+/* Flag group ---------------------------------------------------------------------------*/
+#define SENSOR_0 (OS_FLAGS)0x0001
+#define SENSOR_1 (OS_FLAGS)0x0002
+#define SENSOR_2 (OS_FLAGS)0x0004
+#define SENSOR_3 (OS_FLAGS)0x0008
+#define SENSOR_4 (OS_FLAGS)0x0010
+#define SENSOR_5 (OS_FLAGS)0x0020
+#define SENSOR_6 (OS_FLAGS)0x0040
+#define SENSOR_7 (OS_FLAGS)0x0080
+#define SENSOR_8 (OS_FLAGS)0x0100
+#define SENSOR_9 (OS_FLAGS)0x0200
+#define SENSOR_10 (OS_FLAGS)0x0400
+OS_FLAG_GRP inputs;
+
 /**	Chaque tache aura les elements suivants:
  *  #define:
  * 		* une dimension de stack
@@ -109,5 +123,16 @@ OS_TCB evacDroiteTCB;
 CPU_STK evacDroiteSTK[EVAC_DROITE_STK_SIZE];
 
 void evacDroiteTask(void *p_arg);
+
+/* * * * * * * * * * * * * * * * * * * * * * */
+/* * * * *		Scrutation des In.	 * * * * */
+/* * * * * * * * * * * * * * * * * * * * * * */
+#define INPUT_SCRUT_STK_SIZE 128u
+#define INPUT_SCRUT_PRIO 4u
+
+OS_TCB inputScrutTCB;
+CPU_STK inputScrutSTK[INPUT_SCRUT_STK_SIZE];
+
+void inputScrutationTask(void *p_arg);
 
 #endif /*	__SORTING_H__	*/

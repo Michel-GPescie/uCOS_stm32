@@ -32,20 +32,14 @@ void tapisEntreeTask(void *p_arg)	{
 		switch(Etat_0)
 		{
 			case P4:
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_0)==1)	{
-					Etat_0 = P5;
-					OSSemPost(&Sem0to1, OS_OPT_POST_1, &err);
-				} else {
-					OSTimeDlyHMSM(0, 0, 0, 20, OS_OPT_TIME_HMSM_STRICT, &err);
-				}
+				OSFlagPend(&inputs, SENSOR_0, 0, OS_OPT_PEND_FLAG_SET_ANY + OS_OPT_PEND_BLOCKING, &ts, &err);
+				Etat_0 = P5;
+				OSSemPost(&Sem0to1, OS_OPT_POST_1, &err);
 				break;
 			case P5:
-				if (GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_0)==0) {
-					Etat_0 = P8;
-					GPIO_SetBits(IDI_SLOT1_PORT, IDI_0);
-				} else {
-					OSTimeDlyHMSM(0, 0, 0, 20, OS_OPT_TIME_HMSM_STRICT, &err);
-				}
+				OSFlagPend(&inputs, SENSOR_0, 0, OS_OPT_PEND_FLAG_CLR_ANY + OS_OPT_PEND_BLOCKING, &ts, &err);
+				Etat_0 = P8;
+				GPIO_SetBits(IDI_SLOT1_PORT, IDI_0);
 				break;
 			case P8:
 				OSSemPend(&SemFinLigne, 0, OS_OPT_PEND_BLOCKING, &ts, &err);
@@ -64,6 +58,7 @@ void tapisTransfertTask(void *p_arg)	{
 	OS_ERR err;
 	CPU_TS ts;
 	(void)p_arg;
+	OS_FLAGS res;
 
 	enum tapis_1{
 		Init,
@@ -84,54 +79,34 @@ void tapisTransfertTask(void *p_arg)	{
 						  OS_OPT_PEND_BLOCKING,
 						  &ts,
 						  &err);
-
 				GPIO_ResetBits(IDI_SLOT1_PORT,IDI_1);
 				etat_1 = A1a;
 				break;
 
 			case A1a :
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_2)==1)
-					{
-						/*OSSemPost(&Sem1to3,
-					                OS_OPT_POST_1,
-									&err);*/
-						flag='D';
-						OSQPost(&tapis1totri,flag,sizeof(flag),OS_OPT_POST_FIFO,&err);
-						etat_1=A1b;
-					}
-					else if ((GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_1)==1) && (GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_2)==0))
-					{
-						/*OSSemPost(&Sem1to2,
-									OS_OPT_POST_1,
-									&err);*/
-						flag='G';
-						OSQPost(&tapis1totri,flag,sizeof(flag),OS_OPT_POST_FIFO,&err);
-						etat_1=A1b;
-					}
-					else
-					{
-						OSTimeDlyHMSM(0,0,0,20,OS_OPT_TIME_HMSM_STRICT,&err);
-					}
-
-					break;
-
-			case A1b :
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_3)==1)
-				{
-					etat_1=A1c;
-					OSSemPost(&Sem1to2,OS_OPT_POST_1,&err);
+				OSFlagPend(&inputs, SENSOR_1, 0, OS_OPT_PEND_FLAG_SET_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				res = OSFlagPend(&inputs, SENSOR_2, 1, OS_OPT_PEND_FLAG_SET_ANY + OS_OPT_PEND_BLOCKING, &ts, &err);
+				if(res){
+					flag='D';
+					OSQPost(&tapis1totri,flag,sizeof(flag),OS_OPT_POST_FIFO,&err);
+					etat_1=A1b;
+				}
+				else{
+					flag='G';
+					OSQPost(&tapis1totri,flag,sizeof(flag),OS_OPT_POST_FIFO,&err);
+					etat_1=A1b;
 				}
 				break;
+
+			case A1b :
+				OSFlagPend(&inputs, SENSOR_3, 0, OS_OPT_PEND_FLAG_SET_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				etat_1=A1c;
+				OSSemPost(&Sem1to2,OS_OPT_POST_1,&err);
+				break;
 			case A1c :
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_3)==0)
-				{
-					GPIO_SetBits(IDI_SLOT1_PORT,IDI_1);
-					etat_1=Init;
-				}
-				else
-				{
-					OSTimeDlyHMSM(0,0,0,20,OS_OPT_TIME_HMSM_STRICT, &err);
-				}
+				OSFlagPend(&inputs, SENSOR_3, 0,  OS_OPT_PEND_FLAG_CLR_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				GPIO_SetBits(IDI_SLOT1_PORT,IDI_1);
+				etat_1=Init;
 				break;
 			Default:
 				break;
@@ -165,34 +140,30 @@ void triTask(void *p_arg)
 		switch (etat_2_3)
 		{
 			case Init :
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_4)==1)
-				{
-					OSSemPend(&Sem1to2,
-							  0,
-							  OS_OPT_PEND_BLOCKING,
-							  &ts,
-							  &err);
-					GPIO_ResetBits(IDI_SLOT1_PORT,IDI_2);
-					etat_2_3 = p6;
-				}
+				OSFlagPend(&inputs, SENSOR_4, 0,  OS_OPT_PEND_FLAG_SET_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				OSSemPend(&Sem1to2,
+						  0,
+						  OS_OPT_PEND_BLOCKING,
+						  &ts,
+						  &err);
+				GPIO_ResetBits(IDI_SLOT1_PORT,IDI_2);
+				etat_2_3 = p6;
 				break;
 
 			case p6 :
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_6)==1)
+				OSFlagPend(&inputs, SENSOR_6, 0,  OS_OPT_PEND_FLAG_SET_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				GPIO_SetBits(IDI_SLOT1_PORT,IDI_2);
+				OSSemPost(&Sem2to4, OS_OPT_POST_1, &err);
+				if(err==OS_ERR_NONE)
 				{
-					GPIO_SetBits(IDI_SLOT1_PORT,IDI_2);
-					OSSemPost(&Sem2to4, OS_OPT_POST_1, &err);
-					if(err==OS_ERR_NONE)
-					{
-					etat_2_3=p0;}
-					else {
-						break;
-					}
+					etat_2_3=p0;
+				}
+				else {
+					break;
 				}
 				break;
 
 			case p0:
-				//OSSemSet(&Sem2to4, 1, &err);
 				OSSemPend(&Sem4to2,
 						  0,
 						  OS_OPT_PEND_BLOCKING,
@@ -217,48 +188,36 @@ void triTask(void *p_arg)
 				break;
 
 			case p10:
-
-				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_8)==1)
-				{
-					OSSemPost(&Sem2to5,
-							  OS_OPT_POST_1,
-							  &err);
-					etat_2_3=p11;
-				}
+				OSFlagPend(&inputs, SENSOR_8, 0,  OS_OPT_PEND_FLAG_SET_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				OSSemPost(&Sem2to5,
+						  OS_OPT_POST_1,
+						  &err);
+				etat_2_3=p11;
 				break;
 
 			case p11:
-
-				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_8)==0)
-				{
-					OSSemPost(&SemtoA4,
-							  OS_OPT_POST_1,
-							  &err);
-					GPIO_SetBits(IDI_SLOT1_PORT,IDI_2);
-					etat_2_3=Init;
-				}
+				OSFlagPend(&inputs, SENSOR_8, 0,  OS_OPT_PEND_FLAG_CLR_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				OSSemPost(&SemtoA4,
+						  OS_OPT_POST_1,
+						  &err);
+				GPIO_SetBits(IDI_SLOT1_PORT,IDI_2);
+				etat_2_3=Init;
 				break;
 
 			case p9:
-
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_7)==1)
-				{
-					OSSemPost(&Sem3to6,
-							  OS_OPT_POST_1,
-							  &err);
-					etat_2_3=p12;
-				}
+				OSFlagPend(&inputs, SENSOR_7, 0,  OS_OPT_PEND_FLAG_SET_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				OSSemPost(&Sem3to6,
+						  OS_OPT_POST_1,
+						  &err);
+				etat_2_3=p12;
 				break;
 			case p12:
-
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_7)==0)
-				{
-					OSSemPost(&SemtoA4,
-							  OS_OPT_POST_1,
-							  &err);
-					GPIO_SetBits(IDI_SLOT1_PORT,IDI_3);
-					etat_2_3=Init;
-				}
+				OSFlagPend(&inputs, SENSOR_7, 0,  OS_OPT_PEND_FLAG_CLR_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				OSSemPost(&SemtoA4,
+						  OS_OPT_POST_1,
+						  &err);
+				GPIO_SetBits(IDI_SLOT1_PORT,IDI_3);
+				etat_2_3=Init;
 				break;
 			}
 		}
@@ -293,12 +252,10 @@ void rotorTask(void *p_arg)	{
 				break;
 
 			case p7 :
-				if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_5)==1)
-				{
-					OSSemPost(&Sem4to2,OS_OPT_POST_1,&err);
-					etat_4=p23;
-				} break;
-
+				OSFlagPend(&inputs, SENSOR_5, 0,  OS_OPT_PEND_FLAG_SET_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				OSSemPost(&Sem4to2,OS_OPT_POST_1,&err);
+				etat_4=p23;
+				break;
 			case p23 :
 				OSSemPend(&SemtoA4,
 						  0,
@@ -322,7 +279,6 @@ void evacGaucheTask(void *p_arg)	{
 		P29	// ????
 	};
 	int Etat_5 = P20;
-	//GPIO_SetBits(IDI_SLOT1_PORT, IDI_5);
 
 	while(DEF_ON)	{
 		switch(Etat_5){
@@ -336,17 +292,15 @@ void evacGaucheTask(void *p_arg)	{
 				Etat_5 = P18;
 				break;
 			case P18:
-				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_10))	{
-					GPIO_ResetBits(IDI_SLOT1_PORT, IDI_5);
-					Etat_5 = P19;
-				}
+				OSFlagPend(&inputs, SENSOR_10, 0,  OS_OPT_PEND_FLAG_SET_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				GPIO_ResetBits(IDI_SLOT1_PORT, IDI_5);
+				Etat_5 = P19;
 				break;
 			case P19:
-				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_10)==0)	{
-					OSSemPost(&SemFinLigne, OS_OPT_POST_1, &err);
-					GPIO_SetBits(IDI_SLOT1_PORT, IDI_5);
-					Etat_5 = P20;
-				}
+				OSFlagPend(&inputs, SENSOR_10, 0,  OS_OPT_PEND_FLAG_CLR_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				OSSemPost(&SemFinLigne, OS_OPT_POST_1, &err);
+				GPIO_SetBits(IDI_SLOT1_PORT, IDI_5);
+				Etat_5 = P20;
 				break;
 			default:
 				break;
@@ -381,17 +335,15 @@ void evacDroiteTask(void *p_arg)	{
 				Etat_6 = P15;
 				break;
 			case P15:
-				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_9))	{
-					GPIO_ResetBits(IDI_SLOT1_PORT, IDI_6);
-					Etat_6 = P16;
-				}
+				OSFlagPend(&inputs, SENSOR_9, 0,  OS_OPT_PEND_FLAG_SET_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				GPIO_ResetBits(IDI_SLOT1_PORT, IDI_6);
+				Etat_6 = P16;
 				break;
 			case P16:
-				if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_9)==0)	{
-					OSSemPost(&SemFinLigne, OS_OPT_POST_1, &err);
-					GPIO_SetBits(IDI_SLOT1_PORT, IDI_6);
-					Etat_6 = P17;
-				}
+				OSFlagPend(&inputs, SENSOR_9, 0,  OS_OPT_PEND_FLAG_CLR_ALL + OS_OPT_PEND_BLOCKING, &ts, &err);
+				OSSemPost(&SemFinLigne, OS_OPT_POST_1, &err);
+				GPIO_SetBits(IDI_SLOT1_PORT, IDI_6);
+				Etat_6 = P17;
 				break;
 			default:
 				break;
@@ -400,4 +352,59 @@ void evacDroiteTask(void *p_arg)	{
 		}
 	}
 
+}
+
+void inputScrutationTask(void *p_arg)
+{
+	OS_ERR err;
+
+	while(DEF_ON)
+	{
+		if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_0))
+			OSFlagPost(&inputs, SENSOR_0, OS_OPT_POST_FLAG_SET, &err);	// Sensor 0
+		else
+			OSFlagPost(&inputs, SENSOR_0, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 0
+		if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_1))
+			OSFlagPost(&inputs, SENSOR_1, OS_OPT_POST_FLAG_SET, &err);	// Sensor 1
+		else
+			OSFlagPost(&inputs, SENSOR_1, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 1
+		if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_2))
+			OSFlagPost(&inputs, SENSOR_2, OS_OPT_POST_FLAG_SET, &err);	// Sensor 2
+		else
+			OSFlagPost(&inputs, SENSOR_2, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 2
+		if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_3))
+			OSFlagPost(&inputs, SENSOR_3, OS_OPT_POST_FLAG_SET, &err);	// Sensor 3
+		else
+			OSFlagPost(&inputs, SENSOR_3, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 3
+		if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_4))
+			OSFlagPost(&inputs, SENSOR_4, OS_OPT_POST_FLAG_SET, &err);	// Sensor 4
+		else
+			OSFlagPost(&inputs, SENSOR_4, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 4
+		if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_5))
+			OSFlagPost(&inputs, SENSOR_5, OS_OPT_POST_FLAG_SET, &err);	// Sensor 5
+		else
+			OSFlagPost(&inputs, SENSOR_5, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 5
+		if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_6))
+			OSFlagPost(&inputs, SENSOR_6, OS_OPT_POST_FLAG_SET, &err);	// Sensor 6
+		else
+			OSFlagPost(&inputs, SENSOR_6, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 6
+		if(GPIO_ReadInputDataBit(IDO_SLOT1_PORT, IDO_7))
+			OSFlagPost(&inputs, SENSOR_7, OS_OPT_POST_FLAG_SET, &err);	// Sensor 7
+		else
+			OSFlagPost(&inputs, SENSOR_7, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 7
+		if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_8))
+			OSFlagPost(&inputs, SENSOR_8, OS_OPT_POST_FLAG_SET, &err);	// Sensor 8
+		else
+			OSFlagPost(&inputs, SENSOR_8, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 8
+		if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_9))
+			OSFlagPost(&inputs, SENSOR_9, OS_OPT_POST_FLAG_SET, &err);	// Sensor 9
+		else
+			OSFlagPost(&inputs, SENSOR_9, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 9
+		if(GPIO_ReadInputDataBit(IDO_SLOT2_PORT, IDO_10))
+			OSFlagPost(&inputs, SENSOR_10, OS_OPT_POST_FLAG_SET, &err);	// Sensor 10
+		else
+			OSFlagPost(&inputs, SENSOR_10, OS_OPT_POST_FLAG_CLR, &err);	// Sensor 10
+
+		OSTimeDlyHMSM(0, 0, 0, 50, OS_OPT_TIME_HMSM_STRICT, &err);
+	}
 }

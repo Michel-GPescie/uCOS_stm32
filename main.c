@@ -30,7 +30,7 @@ int main(void) {
 
 	initPinmap();
 
-    /* Disable all interrupts. */
+    /* Disable all interrupts. du caca */
 
     BSP_IntDisAll();
 
@@ -57,6 +57,9 @@ int main(void) {
     OSSemCreate(&Sem3to6, "semaphore tapis 3 à 6", 0, &oseError);
     OSSemCreate(&Sem2to6, "semaphore tapis 1 à 3", 0, &oseError);
 
+    /* Flag group */
+
+    OSFlagCreate(&inputs, "flag event group", (OS_FLAGS)0, &oseError);
 
     /* Blink LED :D */
     OSTaskCreate((OS_TCB       *)&AppTaskStartTCB,
@@ -173,6 +176,21 @@ int main(void) {
                    (void         *)0,
                    (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
                    (OS_ERR       *)&oseError);
+      /* gestion des input */
+      OSTaskCreate((OS_TCB       *)&inputScrutTCB,
+                   (CPU_CHAR     *)"Scrutation Input",
+                   (OS_TASK_PTR   )inputScrutationTask,
+                   (void         *)0,
+                   (OS_PRIO       )INPUT_SCRUT_PRIO,
+                   (CPU_STK      *)&inputScrutSTK[0],
+                   (CPU_STK_SIZE  )inputScrutSTK[INPUT_SCRUT_STK_SIZE / 10],
+                   (CPU_STK_SIZE  )INPUT_SCRUT_STK_SIZE,
+                   (OS_MSG_QTY    )0,
+                   (OS_TICK       )0,
+                   (void         *)0,
+                   (OS_OPT        )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+                   (OS_ERR       *)&oseError);
+
     /* Start multitasking. */
 
     OSStart(&oseError);
